@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# No indexar rutas de administración
+Disallow: /admin/
+Disallow: /checkout/
+
+Sitemap: https://drjohnsalazar.com.co/sitemap.xml

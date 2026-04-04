@@ -1,0 +1,356 @@
+/* AdminProductos.css */
+
+.admin-productos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.admin-productos-header .admin-page-title { margin-bottom: 0; }
+
+.admin-productos-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.admin-add-btn {
+  background: var(--admin-primary);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.55rem 1rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s;
+  min-height: 38px;
+}
+.admin-add-btn:hover { background: #2a353c; }
+
+.admin-seed-btn {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  padding: 0.55rem 1rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--admin-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s;
+  min-height: 38px;
+}
+.admin-seed-btn:hover { border-color: var(--admin-primary); color: var(--admin-primary); }
+
+/* ── Form ── */
+.ap-form-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ap-form-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--admin-text);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.ap-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ap-field { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.ap-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--admin-text);
+}
+
+.ap-field input,
+.ap-field textarea {
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  padding: 0.6rem 0.85rem;
+  font-size: 13.5px;
+  color: var(--admin-text);
+  background: var(--admin-surface);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 40px;
+}
+
+.ap-field input:focus,
+.ap-field textarea:focus {
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(50,65,73,.08);
+}
+
+.ap-field--full     { grid-column: 1 / -1; }
+.ap-field--checkbox { align-self: end; padding-bottom: 0.1rem; }
+
+.ap-field--checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-text);
+  min-height: 40px;
+}
+
+.ap-field--checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--admin-primary);
+  flex-shrink: 0;
+}
+
+.ap-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--admin-border);
+  flex-wrap: wrap;
+}
+
+.ap-save-btn {
+  background: var(--admin-primary);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.6rem 1.4rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  min-height: 40px;
+}
+.ap-save-btn:hover:not(:disabled) { background: #2a353c; }
+.ap-save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.ap-cancel-btn {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  padding: 0.6rem 1.1rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  min-height: 40px;
+}
+.ap-cancel-btn:hover { border-color: var(--admin-primary); color: var(--admin-text); }
+
+/* ── Image upload zone ── */
+.ap-upload-zone {
+  border: 2px dashed var(--admin-border);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--admin-bg);
+}
+.ap-upload-zone:hover,
+.ap-upload-zone--drag {
+  border-color: var(--admin-primary);
+  background: var(--admin-primary-lt);
+}
+.ap-upload-icon  { color: var(--admin-faint); }
+.ap-upload-text  { font-size: 13.5px; color: var(--admin-text); margin: 0; }
+.ap-upload-text strong { color: var(--admin-primary); }
+.ap-upload-hint  { font-size: 11.5px; color: var(--admin-muted); margin: 0; }
+
+/* Preview */
+.ap-img-preview {
+  position: relative;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--admin-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+.ap-img-preview-img {
+  max-height: 200px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+.ap-img-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  justify-content: center;
+}
+.ap-img-change-btn,
+.ap-img-remove-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+}
+.ap-img-change-btn { background: #fff;              color: var(--admin-primary); }
+.ap-img-remove-btn { background: var(--admin-danger); color: #fff; }
+.ap-img-change-btn:hover,
+.ap-img-remove-btn:hover { opacity: 0.85; }
+
+/* Progress bar */
+.ap-upload-progress {
+  margin-top: 0.5rem;
+  background: var(--admin-border);
+  border-radius: 20px;
+  height: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.ap-upload-progress-bar {
+  height: 100%;
+  background: var(--admin-primary);
+  border-radius: 20px;
+  transition: width 0.2s ease;
+}
+.ap-upload-progress-label {
+  font-size: 11px;
+  color: var(--admin-muted);
+  margin-top: 0.25rem;
+  display: block;
+  text-align: right;
+}
+
+/* ── Product grid ── */
+.ap-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.ap-product-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.ap-product-card:hover  { box-shadow: var(--admin-shadow-md); }
+.ap-product-card--oos   { opacity: 0.6; }
+
+.ap-product-img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background: var(--admin-bg);
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.ap-product-img-placeholder {
+  width: 100%;
+  height: 90px;
+  background: var(--admin-bg);
+  border-bottom: 1px solid var(--admin-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--admin-faint);
+}
+
+.ap-product-info {
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.ap-product-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.4rem; }
+.ap-product-name    { font-size: 13.5px; font-weight: 700; color: var(--admin-text); margin: 0; }
+.ap-product-subtitle{ font-size: 12px;   color: var(--admin-muted); margin: 0; }
+.ap-product-desc    { font-size: 12px;   color: var(--admin-muted); margin: 0; line-height: 1.4; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.ap-product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--admin-border);
+}
+
+.ap-product-price { font-size: 15px; font-weight: 700; color: var(--admin-text); }
+.ap-product-btns  { display: flex; gap: 0.35rem; }
+
+.ap-edit-btn,
+.ap-delete-btn {
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  min-height: 30px;
+}
+
+.ap-edit-btn                      { background: #eff6ff; color: #2563eb; }
+.ap-edit-btn:hover                { background: #2563eb; color: #fff; }
+.ap-delete-btn                    { background: #fef2f2; color: var(--admin-danger); }
+.ap-delete-btn:hover:not(:disabled){ background: var(--admin-danger); color: #fff; }
+.ap-delete-btn:disabled           { opacity: 0.45; cursor: not-allowed; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .ap-form-footer { justify-content: stretch; }
+  .ap-save-btn, .ap-cancel-btn { flex: 1; text-align: center; justify-content: center; }
+  .ap-product-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 540px) {
+  .ap-form-grid    { grid-template-columns: 1fr; }
+  .ap-product-grid { grid-template-columns: 1fr; }
+
+  .admin-productos-header { flex-direction: column; align-items: stretch; }
+  .admin-productos-actions { justify-content: stretch; }
+  .admin-add-btn, .admin-seed-btn { flex: 1; justify-content: center; }
+}

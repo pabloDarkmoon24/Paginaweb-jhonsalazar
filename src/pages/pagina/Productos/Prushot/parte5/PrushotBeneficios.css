@@ -1,0 +1,59 @@
+/* ============================================
+   BENEFICIOS CLÍNICOS Y TÉCNICOS
+   ============================================ */
+
+.prushot-beneficios {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header blanco con títulos */
+.prushot-beneficios-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.prushot-beneficios-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f47a20;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.prushot-beneficios-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Banner imagen a ancho completo */
+.prushot-beneficios-banner {
+  width: 100%;
+}
+
+.prushot-beneficios-img {
+  background: #fff;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .prushot-beneficios-title  { font-size: 1.4rem; }
+  .prushot-beneficios-subtitle { font-size: 1rem; }
+  .prushot-beneficios-header { padding: 28px 16px 16px; }
+}

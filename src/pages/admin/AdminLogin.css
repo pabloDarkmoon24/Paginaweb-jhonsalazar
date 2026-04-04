@@ -1,0 +1,147 @@
+/* AdminLogin.css */
+
+.admin-login-page {
+  min-height: 100vh;
+  background: var(--admin-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.admin-login-card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  padding: 2.5rem 2.25rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--admin-shadow-md);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Logo — ajustado para imagen */
+.admin-login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.admin-login-logo img {
+  height: 70px;        /* ← ajusta según el tamaño de tu logo */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.admin-login-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--admin-text);
+  margin: 0 0 0.25rem;
+  letter-spacing: -.01em;
+}
+
+.admin-login-subtitle {
+  font-size: 13.5px;
+  color: var(--admin-muted);
+  margin: 0;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-login-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--admin-text);
+  letter-spacing: .01em;
+}
+
+.admin-login-input {
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  padding: 0.65rem 0.9rem;
+  font-size: 14px;
+  color: var(--admin-text);
+  background: var(--admin-surface);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-login-input:focus {
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(50,65,73,.1);
+}
+
+.admin-login-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  padding: 0.6rem 0.9rem;
+  color: var(--admin-danger);
+  font-size: 13px;
+}
+
+.admin-login-btn {
+  background: var(--admin-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.75rem;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  background: #2a353c;
+  box-shadow: 0 2px 8px rgba(50,65,73,.25);
+}
+
+.admin-login-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE — card al fondo en móvil
+   ============================================ */
+@media (max-width: 480px) {
+  .admin-login-page {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .admin-login-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 2rem 1.5rem 2.5rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.12);
+  }
+
+  .admin-login-logo img {
+    height: 55px;
+  }
+}

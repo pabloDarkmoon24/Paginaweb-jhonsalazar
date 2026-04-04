@@ -1,0 +1,221 @@
+/* --- Wrapper completo --- */
+.prushot-hero-wrapper {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  background-color: #000;
+}
+
+
+/* --- Banner nítido centrado --- */
+.prushot-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 620px;
+  margin: 0 auto;
+  background-image: var(--prushot-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- Contenedor interno --- */
+.prushot-hero-container {
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* --- Bloque de contenido (derecha) --- */
+.prushot-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.prushot-description-box {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+}
+
+.prushot-btn-comprar {
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.prushot-btn-comprar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.prushot-btn-comprar:active {
+  transform: scale(0.98);
+}
+
+.prushot-btn-img {  /* ← también estaba mal escrito: pruSOFT */
+  width: auto;
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   BARRA DE BENEFICIOS
+   ============================================ */
+/* ============================================
+   BARRA DE BENEFICIOS — corregida
+   ============================================ */
+.prushot-benefits {
+  position: relative;
+  z-index: 1;
+  width: 100%;           /* ← era 100vw con margin-left, innecesario dentro del wrapper */
+  padding: 12px 40px 20px;
+  display: flex;
+  justify-content: center;
+  background: #151e20;
+  align-items: center;
+  gap: 80px;
+}
+
+.prushot-benefit-item {
+  display: flex;
+  align-items: center;
+}
+
+.prushot-benefit-item img {
+  height: 150px;
+  width: auto;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1100px) {
+  .prushot-hero {
+    max-width: 100%;        /* ya no corta la imagen en pantallas medianas */
+  }
+
+  .prushot-hero-content {
+    max-width: 380px;
+  }
+
+  .prushot-description-box {
+    max-width: 360px;
+  }
+
+  .prushot-btn-img {
+    max-width: 210px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .prushot-hero {
+    min-height: 480px;
+  }
+
+  .prushot-hero-container {
+    padding: 0 24px;
+    justify-content: center;  /* centra en tablet */
+  }
+
+  .prushot-hero-content {
+    max-width: 320px;
+    align-items: center;      /* centra descripción y botón */
+  }
+
+  .prushot-description-box {
+    max-width: 300px;
+  }
+
+  .prushot-btn-img {
+    max-width: 190px;
+  }
+
+  /* Beneficios */
+  .prushot-benefits {
+    gap: 16px;
+    padding: 10px 24px 16px;
+  }
+
+  .prushot-benefit-item img {
+    height: 90px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .prushot-hero {
+    min-height: 360px;
+    background-position: center top;  /* producto visible desde arriba */
+  }
+
+  .prushot-hero-container {
+    padding: 0 16px;
+    justify-content: center;
+    align-items: flex-end;    /* contenido abajo para no tapar el producto */
+    padding-bottom: 24px;
+  }
+
+  .prushot-hero-content {
+    max-width: 100%;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .prushot-description-box {
+    max-width: 260px;
+  }
+
+  .prushot-btn-img {
+    max-width: 170px;
+  }
+
+  /* Beneficios en columna */
+  .prushot-benefits {
+    flex-direction: row;      /* sigue en fila pero más compacto */
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    justify-content: center;
+  }
+
+  .prushot-benefit-item img {
+    height: 70px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .prushot-hero {
+    min-height: 300px;
+  }
+
+  .prushot-description-box {
+    max-width: 220px;
+  }
+
+  .prushot-btn-img {
+    max-width: 150px;
+  }
+
+  .prushot-benefit-item img {
+    height: 58px;
+  }
+}

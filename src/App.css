@@ -1,0 +1,18 @@
+#root {
+  width: 100%;             /* ← era max-width: 1280px */
+  text-align: left;        /* ← era center, rompe layouts */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #324149;
+  overflow-x: hidden;
+}

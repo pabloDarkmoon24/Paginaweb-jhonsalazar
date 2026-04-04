@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════
+   AdminLayout.css  ·  Dr. John Salazar – Admin
+   ═══════════════════════════════════════════════ */
+
+/* ── Design tokens ── */
+:root {
+  --admin-sidebar-w:  248px;
+  --admin-bg:         #f8fafc;
+  --admin-surface:    #ffffff;
+  --admin-border:     #e2e8f0;
+  --admin-primary:    #324149;
+  --admin-primary-lt: #eef1f3;
+  --admin-text:       #1e293b;
+  --admin-muted:      #64748b;
+  --admin-faint:      #94a3b8;
+  --admin-success:    #059669;
+  --admin-warning:    #d97706;
+  --admin-danger:     #dc2626;
+  --admin-info:       #2563eb;
+  --admin-radius:     8px;
+  --admin-shadow:     0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
+  --admin-shadow-md:  0 4px 12px rgba(0,0,0,.08);
+  --admin-bottom-nav: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── Layout raíz ── */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;           /* ← llena todo el ancho */
+  background: var(--admin-bg);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Main content ── */
+.admin-main {
+  flex: 1;
+  margin-left: var(--admin-sidebar-w);
+  min-height: 100vh;
+  width: calc(100% - var(--admin-sidebar-w));  /* ← ocupa el resto del ancho */
+  padding: 2rem 2.5rem;
+  overflow-x: auto;
+  background: var(--admin-bg);  /* ← fondo explícito, no hereda negro */
+}
+
+/* ══════════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════════ */
+.admin-sidebar {
+  width: var(--admin-sidebar-w);
+  flex-shrink: 0;
+  background: var(--admin-surface);
+  border-right: 1px solid var(--admin-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 200;
+  overflow-y: auto;
+}
+/* Logo en sidebar */
+.admin-sidebar-brand img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  border-bottom: 1px solid var(--admin-border);
+  flex-shrink: 0;
+}
+
+.admin-brand-icon  { color: var(--admin-primary); flex-shrink: 0; }
+.admin-brand-title { display: block; font-size: 13.5px; font-weight: 700; color: var(--admin-text); line-height: 1.2; }
+.admin-brand-sub   { display: block; font-size: 11px; color: var(--admin-faint); margin-top: 2px; }
+
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.admin-nav-section {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--admin-faint);
+  padding: 0 0.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--admin-radius);
+  color: var(--admin-muted);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  min-height: 44px;
+}
+
+.admin-nav-link:hover    { background: var(--admin-bg); color: var(--admin-text); }
+.admin-nav-link--active  { background: var(--admin-primary-lt); color: var(--admin-primary); font-weight: 600; }
+.admin-nav-icon          { flex-shrink: 0; }
+
+.admin-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  color: var(--admin-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: calc(100% - 1.5rem);
+  min-height: 44px;
+}
+.admin-logout-btn:hover { background: #fef2f2; border-color: #fecaca; color: var(--admin-danger); }
+
+/* ── Main content ── */
+.admin-main {
+  flex: 1;
+  margin-left: var(--admin-sidebar-w);
+  min-height: 100vh;
+  padding: 2rem 2.5rem;
+  max-width: 100%;
+  overflow-x: auto;   /* ← scroll horizontal en vez de romper */
+}
+
+/* ── 8-col grid — estable ── */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1.25rem;
+  min-width: 360px;   /* ← scroll antes de romper */
+}
+
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-8 { grid-column: span 8; }
+
+/* ══════════════════════════════════════════
+   BOTTOM NAV — oculto en desktop
+   ══════════════════════════════════════════ */
+.admin-bottom-nav { display: none; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — único corte en 768px
+   Sidebar se oculta, aparece bottom nav
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  .admin-sidebar { display: none; }
+
+  .admin-main {
+    margin-left: 0;
+    padding: 1rem 1rem calc(var(--admin-bottom-nav) + 1rem);
+    min-height: 100vh;
+    overflow-x: auto;
+  }
+
+  /* Bottom nav */
+  .admin-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--admin-bottom-nav);
+    background: var(--admin-surface);
+    border-top: 1px solid var(--admin-border);
+    z-index: 300;
+    align-items: stretch;
+    box-shadow: 0 -2px 12px rgba(0,0,0,.07);
+  }
+
+  .admin-bottom-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    color: var(--admin-faint);
+    font-size: 10px;
+    font-weight: 500;
+    transition: color 0.15s, background 0.15s;
+    padding: 0.4rem 0.25rem;
+    border-top: 2px solid transparent;
+  }
+
+  .admin-bottom-link--active {
+    color: var(--admin-primary);
+    border-top-color: var(--admin-primary);
+    background: var(--admin-primary-lt);
+  }
+
+  .admin-bottom-link:hover:not(.admin-bottom-link--active) {
+    color: var(--admin-text);
+    background: var(--admin-bg);
+  }
+
+  .admin-bottom-link span { line-height: 1; letter-spacing: -.01em; }
+
+  /* Login */
+  .admin-login-page {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .admin-login-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 2rem 1.5rem 2.5rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.12);
+  }
+}

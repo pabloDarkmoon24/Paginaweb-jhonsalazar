@@ -1,0 +1,147 @@
+/* ============================================
+   EP11 — MECANISMO DE ACCIÓN
+   ============================================ */
+
+.ep11-mecanismo {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  background-color: #030d1a;
+  padding: 0;
+}
+
+/* Fondo borroso en los lados */
+.ep11-mecanismo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--ep11-mec-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.4);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Banner nítido centrado */
+.ep11-mecanismo-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  margin: 0 auto;
+  background-image: var(--ep11-mec-bg);
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Contenedor dos columnas */
+.ep11-mecanismo-container {
+  width: 100%;
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Columna izquierda — espacio para la figura */
+.ep11-mecanismo-left {
+  flex: 0 0 45%;
+  min-height: 500px;
+}
+
+/* Columna derecha — tarjetas apiladas */
+.ep11-mecanismo-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ep11-mecanismo-card {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ep11-mecanismo-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 184, 212, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1100px) {
+  .ep11-mecanismo-inner {
+    max-width: 100%;
+  }
+
+  .ep11-mecanismo-container {
+    padding: 40px 32px;
+  }
+
+  .ep11-mecanismo-left {
+    flex: 0 0 40%;
+    min-height: 400px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .ep11-mecanismo-container {
+    flex-direction: column;
+    padding: 60px 24px;
+    align-items: center;
+  }
+
+  .ep11-mecanismo-left {
+    display: none;
+  }
+
+  .ep11-mecanismo-cards {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .ep11-mecanismo-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .ep11-mecanismo-container {
+    padding: 40px 16px;
+  }
+
+  .ep11-mecanismo-cards {
+    max-width: 100%;
+    gap: 14px;
+  }
+
+  .ep11-mecanismo-card {
+    border-radius: 10px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .ep11-mecanismo-container {
+    padding: 30px 12px;
+  }
+
+  .ep11-mecanismo-cards {
+    gap: 10px;
+  }
+}

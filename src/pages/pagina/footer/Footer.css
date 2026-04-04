@@ -1,0 +1,32 @@
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #1e2e35;
+  padding: 20px 0;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 200px;
+  width: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-logo { height: 36px; }
+  .footer-container { padding: 0 20px; }
+}

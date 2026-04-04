@@ -1,0 +1,133 @@
+.ep11-beneficios {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header blanco */
+.ep11-beneficios-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ep11-beneficios-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00b8d4;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.ep11-beneficios-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Wrapper con fondo borroso en los lados */
+.ep11-beneficios-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #030d1a;
+}
+
+.ep11-beneficios-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--ep11-ben-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.4);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Imagen nítida centrada */
+.ep11-beneficios-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ep11-beneficios-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1024px) {
+  .ep11-beneficios-title {
+    font-size: 2.4rem;
+  }
+
+  .ep11-beneficios-subtitle {
+    font-size: 1.7rem;
+  }
+
+  .ep11-beneficios-inner {
+    max-width: 100%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .ep11-beneficios-header {
+    padding: 36px 16px 20px;
+  }
+
+  .ep11-beneficios-title {
+    font-size: 2rem;
+  }
+
+  .ep11-beneficios-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .ep11-beneficios-header {
+    padding: 28px 16px 16px;
+  }
+
+  .ep11-beneficios-title {
+    font-size: 1.6rem;
+  }
+
+  .ep11-beneficios-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .ep11-beneficios-title {
+    font-size: 1.3rem;
+  }
+
+  .ep11-beneficios-subtitle {
+    font-size: 0.95rem;
+  }
+}

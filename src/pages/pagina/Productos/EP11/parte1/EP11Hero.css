@@ -1,0 +1,298 @@
+/* ============================================
+   EP11 HERO
+   ============================================ */
+
+.ep11-wrapper {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  background-color: #0c0c0d;
+}
+
+/* Fondo borroso en los lados */
+.ep11-wrapper-blur {
+  position: absolute;
+  inset: 0;
+  background-image: var(--ep11-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.4);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Banner nítido centrado */
+.ep11-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 560px;
+  margin: 0 auto;
+  background-image: var(--ep11-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Contenedor dos columnas */
+.ep11-hero-container {
+  width: 100%;
+  padding: 60px 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Columna izquierda */
+.ep11-hero-content {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Columna derecha — espacio para la botella del fondo */
+.ep11-hero-right {
+  flex: 1;
+  min-height: 480px;
+}
+
+/* Título */
+.ep11-hero-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  border-radius: 14px;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.ep11-hero-title span {
+  color: #00cfff;
+  font-size: 2.4rem;
+}
+
+/* Descripción */
+.ep11-hero-desc {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ep11-highlight {
+  color: #00cfff;
+  font-weight: 700;
+  
+}
+
+.ep11-btn-comprar {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.ep11-btn-comprar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.ep11-btn-img {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+/* ---- Barra de beneficios ---- */
+.ep11-benefits {
+  position: relative;
+  z-index: 1;
+  width: 100%;            /* ← era 100vw con margin-left, innecesario dentro del wrapper */
+  background: #151e20;
+  padding: 16px 60px 28px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ep11-benefit-item img {
+  height: 140px;
+  width: auto;
+  max-width: 100%;        /* ← nunca desborda */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ep11-benefit-item img:hover {
+  transform: scale(1.04);
+}
+
+/* Imagen descripción */
+.ep11-desc-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+/* Botón */
+.ep11-btn-img {
+  height: 52px;
+  width: auto;
+  max-width: 100%;        /* ← nunca desborda */
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1100px) {
+  .ep11-hero {
+    max-width: 100%;
+  }
+
+  .ep11-hero-container {
+    padding: 40px 32px;
+  }
+
+  .ep11-hero-content {
+    flex: 0 0 52%;
+  }
+
+  .ep11-desc-img {
+    max-width: 400px;
+  }
+
+  .ep11-btn-img {
+    height: 46px;
+  }
+
+  .ep11-benefit-item img {
+    height: 110px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .ep11-hero {
+    min-height: 460px;
+  }
+
+  .ep11-hero-container {
+    flex-direction: column;
+    padding: 40px 24px;
+    align-items: center;
+  }
+
+  .ep11-hero-content {
+    flex: none;
+    width: 100%;
+    max-width: 480px;
+    align-items: center;
+  }
+
+  .ep11-hero-right {
+    display: none;
+  }
+
+  .ep11-desc-img {
+    max-width: 360px;
+  }
+
+  .ep11-btn-comprar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ep11-btn-comprar:hover {
+    transform: none;
+    filter: none;
+  }
+
+  .ep11-benefits {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 24px 20px;
+    gap: 16px;
+  }
+
+  .ep11-benefit-item img {
+    height: 100px;
+  }
+
+  .ep11-benefit-item img:hover {
+    transform: none;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .ep11-hero {
+    min-height: 360px;
+    background-position: center top;
+  }
+
+  .ep11-hero-container {
+    padding: 28px 16px;
+    align-items: flex-end;
+    padding-bottom: 24px;
+  }
+
+  .ep11-hero-content {
+    max-width: 100%;
+    gap: 14px;
+  }
+
+  .ep11-desc-img {
+    max-width: 260px;
+  }
+
+  .ep11-btn-img {
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .ep11-benefits {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px 20px;
+    gap: 10px;
+  }
+
+  .ep11-benefit-item img {
+    height: 70px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .ep11-hero {
+    min-height: 300px;
+  }
+
+  .ep11-desc-img {
+    max-width: 200px;
+  }
+
+  .ep11-btn-img {
+    max-width: 170px;
+  }
+
+  .ep11-benefit-item img {
+    height: 58px;
+  }
+}

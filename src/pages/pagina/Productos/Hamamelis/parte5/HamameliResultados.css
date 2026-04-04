@@ -1,0 +1,61 @@
+/* ============================================
+   HAMAMELIS — RESULTADOS VISIBLES
+   ============================================ */
+
+.hamamelis-resultados {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wrapper con fondo borroso en los lados */
+.hamamelis-resultados-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a2200;
+}
+
+.hamamelis-resultados-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hres-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.5);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Imagen nítida centrada */
+.hamamelis-resultados-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.hamamelis-resultados-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hamamelis-divider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 30px;
+  background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hamamelis-resultados-inner {
+    max-width: 100%;
+  }
+}

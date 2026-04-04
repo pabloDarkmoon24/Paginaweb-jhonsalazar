@@ -1,0 +1,256 @@
+/* ============================================
+   HAMAMELIS HERO
+   ============================================ */
+
+.hamamelis-wrapper {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  background-color: #f5f0e8;
+}
+
+/* Fondo borroso en los lados */
+.hamamelis-wrapper-blur {
+  position: absolute;
+  inset: 0;
+  background-image: var(--hamamelis-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px) brightness(0.85);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Banner nítido centrado */
+.hamamelis-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 560px;
+  margin: 0 auto;
+  background-image: var(--hamamelis-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Contenedor dos columnas */
+.hamamelis-hero-container {
+  width: 100%;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Columna izquierda */
+.hamamelis-hero-content {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Columna derecha — espacio para el producto del fondo */
+.hamamelis-hero-right {
+  flex: 1;
+  min-height: 480px;
+}
+
+/* Imagen descripción */
+.hamamelis-desc-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+/* Botón */
+.hamamelis-btn-comprar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;        /* ← esto lo centra dentro del flex padre */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hamamelis-btn-comprar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.hamamelis-btn-img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+/* ---- Barra de beneficios — corregida ---- */
+.hamamelis-benefits {
+  position: relative;
+  z-index: 1;
+  width: 100%;           /* ← era 100vw con margin-left, innecesario dentro del wrapper */
+  background: #151e20;
+  padding: 16px 60px 28px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Botón — base corregida */
+.hamamelis-btn-img {
+  height: 80px;
+  width: auto;
+  max-width: 100%;       /* ← nunca desborda */
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1100px) {
+  .hamamelis-hero {
+    max-width: 100%;
+  }
+
+  .hamamelis-hero-container {
+    padding: 40px 32px;
+  }
+
+  .hamamelis-hero-content {
+    flex: 0 0 52%;
+  }
+
+  .hamamelis-desc-img {
+    max-width: 420px;
+  }
+
+  .hamamelis-btn-img {
+    height: 68px;
+  }
+
+  .hamamelis-benefit-item img {
+    height: 110px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hamamelis-hero {
+    min-height: 460px;
+  }
+
+  .hamamelis-hero-container {
+    flex-direction: column;
+    padding: 40px 24px;
+    align-items: center;
+  }
+
+  .hamamelis-hero-content {
+    flex: none;
+    width: 100%;
+    max-width: 480px;
+    align-items: center;  /* centra desc y botón */
+  }
+
+  .hamamelis-hero-right {
+    display: none;
+  }
+
+  .hamamelis-desc-img {
+    max-width: 380px;
+  }
+
+  .hamamelis-btn-comprar:hover {
+    transform: none;
+    filter: none;
+  }
+
+  .hamamelis-benefits {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 24px 20px;
+    gap: 16px;
+  }
+
+  .hamamelis-benefit-item img {
+    height: 100px;
+  }
+
+  .hamamelis-benefit-item img:hover {
+    transform: none;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .hamamelis-hero {
+    min-height: 360px;
+    background-position: center top;
+  }
+
+  .hamamelis-hero-container {
+    padding: 28px 16px;
+    align-items: flex-end;  /* contenido abajo para no tapar el producto */
+    padding-bottom: 24px;
+  }
+
+  .hamamelis-hero-content {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .hamamelis-desc-img {
+    max-width: 260px;
+  }
+
+  .hamamelis-btn-comprar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hamamelis-btn-img {
+    height: auto;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .hamamelis-benefits {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px 20px;
+    gap: 10px;
+  }
+
+  .hamamelis-benefit-item img {
+    height: 70px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .hamamelis-hero {
+    min-height: 300px;
+  }
+
+  .hamamelis-desc-img {
+    max-width: 200px;
+  }
+
+  .hamamelis-btn-img {
+    max-width: 180px;
+  }
+
+  .hamamelis-benefit-item img {
+    height: 58px;
+  }
+}

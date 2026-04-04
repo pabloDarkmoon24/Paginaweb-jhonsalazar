@@ -1,0 +1,253 @@
+/* ============================================
+   HAMAMELIS — BENEFICIOS CLÍNICOS
+   ============================================ */
+
+.hbeneficios {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header blanco */
+.hbeneficios-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hbeneficios-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #3a4e00;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hbeneficios-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Área con fondo verde */
+.hbeneficios-dark {
+  width: 100%;
+  background-image: var(--hben-bg);
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Carrusel */
+.hbeneficios-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* Track */
+.hbeneficios-track {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Slide — 2 tarjetas apiladas */
+.hbeneficios-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.hbeneficios-card {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Flechas */
+.hbeneficios-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  user-select: none;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hbeneficios-btn:hover { color: #d4b800; }
+
+/* Dots */
+.hbeneficios-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.hbeneficios-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.hbeneficios-dot.active { background: #d4b800; }
+
+/* Animaciones */
+@keyframes hbenIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes hbenOutLeft {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes hbenOutRight {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+.hbeneficios-slide.hben-in        { animation: hbenIn       0.4s ease; }
+.hbeneficios-slide.hben-out-left  { animation: hbenOutLeft  0.4s ease forwards; }
+.hbeneficios-slide.hben-out-right { animation: hbenOutRight 0.4s ease forwards; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1024px) {
+  .hbeneficios-title {
+    font-size: 2.4rem;
+  }
+
+  .hbeneficios-subtitle {
+    font-size: 1.7rem;
+  }
+
+  .hbeneficios-carousel {
+    max-width: 700px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hbeneficios-header {
+    padding: 36px 16px 20px;
+  }
+
+  .hbeneficios-title {
+    font-size: 2rem;
+  }
+
+  .hbeneficios-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hbeneficios-dark {
+    padding: 28px 12px 24px;
+  }
+
+  .hbeneficios-carousel {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .hbeneficios-btn {
+    font-size: 2.4rem;
+    padding: 0 4px;
+  }
+
+  .hbeneficios-card {
+    border-radius: 10px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .hbeneficios-header {
+    padding: 28px 16px 16px;
+  }
+
+  .hbeneficios-title {
+    font-size: 1.6rem;
+  }
+
+  .hbeneficios-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hbeneficios-dark {
+    padding: 20px 8px 20px;
+  }
+
+  .hbeneficios-carousel {
+    gap: 6px;
+  }
+
+  .hbeneficios-btn {
+    font-size: 2rem;
+    padding: 0 2px;
+  }
+
+  /* Slide en móvil: 1 tarjeta visible a la vez */
+  .hbeneficios-slide {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .hbeneficios-dots {
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .hbeneficios-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .hbeneficios-title {
+    font-size: 1.3rem;
+  }
+
+  .hbeneficios-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hbeneficios-btn {
+    font-size: 1.6rem;
+  }
+}

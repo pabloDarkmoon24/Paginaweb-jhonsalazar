@@ -1,0 +1,233 @@
+/* ============================================
+   HAMAMELIS — COMPOSICIÓN FUNCIONAL
+   ============================================ */
+
+.hamamelis-composicion {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header blanco */
+.hamamelis-composicion-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamamelis-composicion-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #3a4e00;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hamamelis-composicion-subtitle {
+  font-size: 2rem;
+  color: #222;
+  margin: 0;
+  text-align: center;
+}
+
+/* Área oscura */
+.hamamelis-composicion-dark {
+  width: 100%;
+  background-color: #111a00;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Carrusel */
+.hamamelis-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.hamamelis-carousel-track {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hamamelis-carousel-card {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Flechas */
+.hamamelis-carousel-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  user-select: none;
+  line-height: 1;
+}
+
+.hamamelis-carousel-btn:hover { color: #9aaa00; }
+
+/* Dots */
+.hamamelis-carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.hamamelis-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.hamamelis-dot.active { background: #9aaa00; }
+
+/* Animaciones */
+@keyframes hSlideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes hSlideOutLeft {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes hSlideOutRight {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+.hamamelis-carousel-card.hslide-in         { animation: hSlideInFromRight 0.4s ease; }
+.hamamelis-carousel-card.hslide-out-left   { animation: hSlideOutLeft     0.4s ease forwards; }
+.hamamelis-carousel-card.hslide-out-right  { animation: hSlideOutRight    0.4s ease forwards; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1024px) {
+  .hamamelis-composicion-title {
+    font-size: 2.4rem;
+  }
+
+  .hamamelis-composicion-subtitle {
+    font-size: 1.7rem;
+  }
+
+  .hamamelis-carousel {
+    max-width: 700px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hamamelis-composicion-header {
+    padding: 36px 16px 20px;
+  }
+
+  .hamamelis-composicion-title {
+    font-size: 2rem;
+  }
+
+  .hamamelis-composicion-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hamamelis-composicion-dark {
+    padding: 28px 12px;
+  }
+
+  .hamamelis-carousel {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .hamamelis-carousel-btn {
+    font-size: 2.4rem;
+    padding: 0 4px;
+  }
+
+  .hamamelis-carousel-card {
+    border-radius: 12px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .hamamelis-composicion-header {
+    padding: 28px 16px 16px;
+  }
+
+  .hamamelis-composicion-title {
+    font-size: 1.6rem;
+  }
+
+  .hamamelis-composicion-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hamamelis-composicion-dark {
+    padding: 20px 8px;
+  }
+
+  .hamamelis-carousel {
+    gap: 6px;
+  }
+
+  .hamamelis-carousel-btn {
+    font-size: 2rem;
+    padding: 0 2px;
+  }
+
+  .hamamelis-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .hamamelis-carousel-dots {
+    margin-top: 14px;
+    gap: 6px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .hamamelis-composicion-title {
+    font-size: 1.3rem;
+  }
+
+  .hamamelis-composicion-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hamamelis-carousel-btn {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,239 @@
+/* ============================================
+   EP11 — COMPOSICIÓN FUNCIONAL
+   ============================================ */
+
+.ep11-composicion {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header blanco */
+.ep11-composicion-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ep11-composicion-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00b8d4;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.ep11-composicion-subtitle {
+  font-size: 2rem;
+  color: #222;
+  margin: 0;
+  text-align: center;
+}
+
+/* Área oscura */
+.ep11-composicion-dark {
+  width: 100%;
+  background-color: #0d1517;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Carrusel */
+.ep11-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;            /* ← era 900px fijo */
+  max-width: 900px;
+}
+
+.ep11-carousel-track {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ep11-carousel-card {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Botones flechas */
+.ep11-carousel-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  user-select: none;
+  line-height: 1;
+}
+
+.ep11-carousel-btn:hover { color: #00b8d4; }
+
+/* Dots */
+.ep11-carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ep11-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.ep11-dot.active { background: #00b8d4; }
+
+/* Animaciones */
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+.ep11-carousel-card.slide-in        { animation: slideInFromRight 0.4s ease; }
+.ep11-carousel-card.slide-out-left  { animation: slideOutLeft     0.4s ease forwards; }
+.ep11-carousel-card.slide-out-right { animation: slideOutRight    0.4s ease forwards; }
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1024px) {
+  .ep11-composicion-title {
+    font-size: 2.4rem;
+  }
+
+  .ep11-composicion-subtitle {
+    font-size: 1.7rem;
+  }
+
+  .ep11-carousel {
+    max-width: 700px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .ep11-composicion-header {
+    padding: 36px 16px 20px;
+  }
+
+  .ep11-composicion-title {
+    font-size: 2rem;
+  }
+
+  .ep11-composicion-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .ep11-composicion-dark {
+    padding: 28px 12px;
+  }
+
+  .ep11-carousel {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .ep11-carousel-btn {
+    font-size: 2.4rem;
+    padding: 0 4px;
+  }
+
+  .ep11-carousel-card {
+    border-radius: 12px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .ep11-composicion-header {
+    padding: 28px 16px 16px;
+  }
+
+  .ep11-composicion-title {
+    font-size: 1.6rem;
+  }
+
+  .ep11-composicion-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .ep11-composicion-dark {
+    padding: 20px 8px;
+  }
+
+  .ep11-carousel {
+    gap: 6px;
+  }
+
+  .ep11-carousel-btn {
+    font-size: 2rem;
+    padding: 0 2px;
+  }
+
+  .ep11-carousel-dots {
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .ep11-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .ep11-composicion-title {
+    font-size: 1.3rem;
+  }
+
+  .ep11-composicion-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .ep11-carousel-btn {
+    font-size: 1.6rem;
+  }
+}

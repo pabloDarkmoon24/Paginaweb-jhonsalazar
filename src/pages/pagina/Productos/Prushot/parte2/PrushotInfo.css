@@ -1,0 +1,244 @@
+/* ============================================
+   SECCIÓN ¿QUÉ ES PRUSHOT?
+   ============================================ */
+
+.prushot-info {
+  width: 100%;
+  background-color: #0d1517;
+  padding: 60px 0;
+    width: 100vw;
+  margin-left: calc(-50vw + 50%); /* ← rompe el contenedor, igual que el wrapper */
+}
+
+.prushot-info-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+/* --- Imagen izquierda --- */
+.prushot-info-img-wrapper {
+  flex: 0 0 auto;
+  width: 320px;
+}
+
+.prushot-info-img {
+  width: 500px;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* --- Contenido derecha --- */
+.prushot-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 40px;     /* ← era 100px */
+}
+
+/* Título */
+/* --- Contenido derecha --- */
+.prushot-info-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 40px;
+}
+
+/* Título */
+.prushot-info-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 calc((100% - 1200px) / 2 + 40px);
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prushot-info-title span {
+  color: #f47a20;
+}
+
+/* Descripción */
+.prushot-info-desc {
+  font-size: 1.5rem;
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.prushot-info-desc span {
+  color: #f47a20;
+  font-weight: 600;
+}
+
+/* Lista con checks */
+.prushot-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prushot-info-list li {
+  display: flex;
+  align-items: flex-start;  /* ← FIX: evita descuadre en texto multilinea */
+  gap: 10px;
+  padding-left: 0;
+}
+
+.prushot-info-list li img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-top: 2px;   
+  margin-left: 50px;       /* ← alinea ópticamente el ícono con la primera línea */
+}
+
+.prushot-info-list li span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1100px) {
+  .prushot-info-container {
+    gap: 60px;
+    padding: 0 2rem;
+  }
+
+  .prushot-info-title {
+    padding-left: 2rem;
+  }
+
+  .prushot-info-img-wrapper {
+    width: 280px;
+  }
+
+  .prushot-info-img {
+    width: 100%;
+  }
+
+  .prushot-info-content {
+    padding-left: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .prushot-info-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+    padding: 0 1.5rem;
+  }
+
+  .prushot-info-title {
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .prushot-info-img-wrapper {
+    width: 240px;
+  }
+
+  .prushot-info-img {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .prushot-info-content {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .prushot-info-desc {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* En tablet centrado, el ícono va al centro también */
+  .prushot-info-list li {
+    justify-content: center;
+    align-items: flex-start;  /* ← mantiene el fix */
+  }
+
+  .prushot-info-list li span {
+    font-size: 1.1rem;
+    text-align: left;         /* ← texto alineado a la izquierda del bloque */
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .prushot-info {
+    padding: 36px 0;
+  }
+
+  .prushot-info-container {
+    gap: 20px;
+    padding: 0 1rem;
+  }
+
+  .prushot-info-title {
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .prushot-info-img-wrapper {
+    width: 180px;
+  }
+
+  .prushot-info-desc {
+    font-size: 1rem;
+  }
+
+  .prushot-info-list li img {
+    width: 44px;
+    height: 44px;
+    margin-top: 2px;          /* ← mantiene el fix en móvil */
+  }
+
+  .prushot-info-list li span {
+    font-size: 0.95rem;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .prushot-info-title {
+    font-size: 1.4rem;
+  }
+
+  .prushot-info-img-wrapper {
+    width: 150px;
+  }
+
+  .prushot-info-desc {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,358 @@
+/* Tienda.css */
+
+.tienda-section {
+  background-color: #f5f7f8;
+  padding: 5rem 2rem;
+  min-height: 80vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.tienda-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.tienda-badge {
+  display: inline-block;
+  background-color: #324149;
+  border-radius: 50px;
+  padding: 1.2rem 5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tienda-title {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0;
+}
+
+.tienda-subtitle {
+  color: #324149;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.tienda-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #66747f;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.7rem 2rem;
+  font-size: 18px;
+  font-style: italic;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.tienda-cart-btn:hover { background-color: #324149; }
+.tienda-cart-icon { font-size: 22px; }
+
+.tienda-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Grid */
+.tienda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card */
+.tienda-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(50, 65, 73, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+}
+
+.tienda-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(50, 65, 73, 0.18);
+}
+
+.tienda-card-img-link {
+  display: block;
+  text-decoration: none;
+}
+
+.tienda-card-img-wrapper {
+  background: #f5f7f8;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.tienda-card-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.tienda-card-img-fallback { font-size: 70px; }
+
+.tienda-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.tienda-card-name {
+  color: #324149;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0;
+}
+
+.tienda-card-subtitle {
+  color: #66747f;
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+}
+
+.tienda-card-desc {
+  color: #324149;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.tienda-card-footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tienda-card-price {
+  font-size: 26px;
+  font-weight: 700;
+  color: #324149;
+}
+
+.tienda-card-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.tienda-btn-secondary,
+.tienda-btn-primary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: none;
+  box-sizing: border-box;
+}
+
+.tienda-btn-secondary {
+  background-color: transparent;
+  border: 2px solid #324149;
+  color: #324149;
+}
+
+.tienda-btn-secondary:hover {
+  background-color: #324149;
+  color: #fff;
+}
+
+.tienda-btn-primary {
+  background-color: #324149;
+  color: #fff;
+  flex: 1;
+}
+
+.tienda-btn-primary:hover:not(:disabled) { background-color: #66747f; }
+.tienda-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.tienda-btn-added { background-color: #27ae60 !important; }
+
+.tienda-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #25d366;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.tienda-btn-whatsapp:hover { background-color: #1ebe5d; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .tienda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 640px) {
+  .tienda-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .tienda-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .tienda-badge {
+    padding: 0.9rem 2rem;
+  }
+
+  .tienda-title {
+    font-size: 26px;
+  }
+
+  .tienda-subtitle {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+  }
+
+  .tienda-cart-btn {
+    font-size: 16px;
+    padding: 0.6rem 1.5rem;
+  }
+
+  /* 2 columnas compactas en móvil en vez de 1 */
+  .tienda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tienda-card-img-wrapper {
+    height: 160px;
+    padding: 1rem;
+  }
+
+  .tienda-card-body {
+    padding: 1rem;
+    gap: 0.3rem;
+  }
+
+  .tienda-card-name {
+    font-size: 16px;
+  }
+
+  .tienda-card-subtitle {
+    font-size: 13px;
+  }
+
+  .tienda-card-desc {
+    font-size: 13px;
+    /* Limita a 3 líneas en móvil para no ocupar demasiado */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tienda-card-price {
+    font-size: 20px;
+  }
+
+  .tienda-card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tienda-btn-secondary,
+  .tienda-btn-primary {
+    width: 100%;
+    font-size: 14px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  /* Sin hover en táctil */
+  .tienda-card:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(50, 65, 73, 0.1);
+  }
+
+  .tienda-btn-secondary:hover,
+  .tienda-btn-primary:hover:not(:disabled) {
+    background-color: #324149;
+    color: #fff;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .tienda-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .tienda-badge {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .tienda-title {
+    font-size: 22px;
+  }
+
+  .tienda-card-img-wrapper {
+    height: 130px;
+  }
+
+  .tienda-card-name {
+    font-size: 14px;
+  }
+
+  .tienda-card-price {
+    font-size: 18px;
+  }
+}

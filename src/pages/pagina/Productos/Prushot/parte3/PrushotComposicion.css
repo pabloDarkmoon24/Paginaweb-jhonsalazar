@@ -1,0 +1,241 @@
+.prushot-composicion {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #fff;   /* fondo blanco para título */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prushot-composicion-header {
+  width: 100%;
+  background-color: #fff;
+  padding: 50px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Área negra del carrusel */
+.prushot-composicion-dark {
+  width: 100%;
+  background-color: #151e20;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prushot-composicion-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f47a20;
+  text-align: center;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.prushot-composicion-subtitle {
+  font-size: 2.5rem;
+  color: #222;
+  margin: 0;
+  text-align: center;
+}
+
+.prushot-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.prushot-carousel-track {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.prushot-carousel-card {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.prushot-carousel-btn {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.prushot-carousel-btn:hover { color: #f47a20; }
+
+.prushot-carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.prushot-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.prushot-dot.active { background: #f47a20; }
+/* --- Transiciones del carrusel --- */
+.prushot-carousel-track {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0);   opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+.prushot-carousel-card.slide-in {
+  animation: slideInFromRight 0.4s ease;
+}
+
+.prushot-carousel-card.slide-out-left {
+  animation: slideOutLeft 0.4s ease forwards;
+}
+
+.prushot-carousel-card.slide-out-right {
+  animation: slideOutRight 0.4s ease forwards;
+}
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet grande */
+@media (max-width: 1024px) {
+  .prushot-composicion-title {
+    font-size: 2.4rem;
+  }
+
+  .prushot-composicion-subtitle {
+    font-size: 2rem;
+  }
+
+  .prushot-carousel {
+    max-width: 700px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .prushot-composicion-header {
+    padding: 36px 16px 20px;
+  }
+
+  .prushot-composicion-title {
+    font-size: 2rem;
+  }
+
+  .prushot-composicion-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .prushot-composicion-dark {
+    padding: 28px 12px;
+  }
+
+  .prushot-carousel {
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .prushot-carousel-btn {
+    font-size: 2.4rem;
+    padding: 0 4px;
+  }
+
+  .prushot-carousel-card {
+    border-radius: 12px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .prushot-composicion-header {
+    padding: 28px 16px 16px;
+  }
+
+  .prushot-composicion-title {
+    font-size: 1.6rem;
+  }
+
+  .prushot-composicion-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .prushot-composicion-dark {
+    padding: 20px 8px;
+  }
+
+  .prushot-carousel {
+    gap: 6px;
+  }
+
+  .prushot-carousel-btn {
+    font-size: 2rem;
+    padding: 0 2px;
+  }
+
+  .prushot-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .prushot-carousel-dots {
+    margin-top: 14px;
+    gap: 6px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+  .prushot-composicion-title {
+    font-size: 1.3rem;
+  }
+
+  .prushot-composicion-subtitle {
+    font-size: 1rem;
+  }
+
+  .prushot-carousel-btn {
+    font-size: 1.6rem;
+  }
+}

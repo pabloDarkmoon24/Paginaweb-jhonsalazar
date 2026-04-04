@@ -1,0 +1,127 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // REGLAS DE SEGURIDAD - PROYECTO E-COMMERCE
+    // ============================================
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() &&
+             request.auth.token.email == "admin@drjohnsalazar.com.co";
+    }
+    
+    // ============================================
+    // COLECCIÓN: products
+    // Productos de la tienda
+    // ============================================
+    match /products/{productId} {
+      // Lectura pública (cualquiera puede ver productos)
+      allow read: if true;
+      
+      // Solo administradores pueden crear/editar/eliminar
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // ============================================
+    // COLECCIÓN: offices  
+    // Consultorios disponibles
+    // ============================================
+    match /offices/{officeId} {
+      // Lectura pública (para mostrar en formulario de citas)
+      allow read: if true;
+      
+      // Solo administradores pueden modificar
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // ============================================
+    // COLECCIÓN: orders
+    // Pedidos de la tienda
+    // ============================================
+    match /orders/{orderId} {
+      // Cualquiera puede CREAR un pedido (checkout público)
+      allow create: if true;
+      
+      // Solo administradores pueden leer, actualizar o eliminar
+      allow read, update, delete: if isAdmin();
+      
+      // Validación de datos al crear pedido
+      allow create: if request.resource.data.keys().hasAll([
+        'orderNumber',
+        'customer',
+        'items',
+        'total',
+        'createdAt'
+      ]);
+    }
+    
+    // ============================================
+    // COLECCIÓN: appointments
+    // Solicitudes de citas
+    // ============================================
+    match /appointments/{appointmentId} {
+      // Cualquiera puede CREAR una solicitud de cita
+      allow create: if true;
+      
+      // Solo administradores pueden leer, actualizar o eliminar
+      allow read, update, delete: if isAdmin();
+      
+      // Validación de datos al crear cita
+      allow create: if request.resource.data.keys().hasAll([
+        'name',
+        'phone',
+        'email',
+        'office',
+        'createdAt'
+      ]);
+    }
+    
+    // ============================================
+    // COLECCIÓN: visits
+    // Visitas por página (tracking público)
+    // ============================================
+    match /visits/{visitId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ============================================
+    // COLECCIÓN: leads
+    // Leads de formulario de contacto y citas al doctor
+    // ============================================
+    match /leads/{leadId} {
+      // Cualquiera puede crear un lead
+      allow create: if true;
+
+      // Solo administradores pueden leer, actualizar o eliminar
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ============================================
+    // COLECCIÓN: security_logs (opcional)
+    // Logs de seguridad para auditoría
+    // ============================================
+    match /security_logs/{logId} {
+      // Solo administradores pueden leer
+      allow read: if isAdmin();
+      
+      // Solo el backend puede escribir (Firebase Functions)
+      allow create: if false;
+    }
+    
+    // ============================================
+    // DENEGAR TODO LO DEMÁS
+    // Cualquier otra colección está bloqueada
+    // ============================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

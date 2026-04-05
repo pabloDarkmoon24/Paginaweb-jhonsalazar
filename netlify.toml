@@ -1,0 +1,8 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+# La Firebase API key es una clave PÚBLICA por diseño — no es un secreto real.
+# Firebase protege los datos mediante Security Rules, no ocultando la API key.
+[build.environment]
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"

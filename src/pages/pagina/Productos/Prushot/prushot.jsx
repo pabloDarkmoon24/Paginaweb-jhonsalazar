@@ -10,10 +10,10 @@ import SEO from "../../../../components/common/SEO";
 const prushotSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Prushot — Energizante y Afrodisíaco Natural",
+  "name": "Prushot — Suplemento Natural Energizante y Coadyuvante del Bienestar",
   "sku": "PRUSHOT-500",
   "brand": { "@type": "Brand", "name": "Dr. John Salazar" },
-  "description": "Jarabe afrodisíaco y energizante natural de 500 ml. Formulado con Borojó, Chontaduro, Maca y Guaraná. Aprobado por INVIMA. Mejora la vitalidad, el deseo sexual y el rendimiento físico sin efectos secundarios.",
+  "description": "Suplemento líquido natural de 500 ml (25 porciones). Formulado con Borojó, Chontaduro, Maca, Guaraná, Té verde y Vitaminas del complejo B. Aprobado por INVIMA. Coadyuvante del bienestar físico y hormonal: contribuye a mejorar la vitalidad, el rendimiento físico y el equilibrio hormonal de forma natural.",
   "image": "https://drjohnsalazar.com.co/img/prushot.png",
   "category": "Suplementos naturales",
   "condition": "https://schema.org/NewCondition",

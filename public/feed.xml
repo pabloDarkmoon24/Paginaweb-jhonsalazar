@@ -10,8 +10,8 @@
     <!-- ══════════════════════════════════════════ -->
     <item>
       <g:id>PRUSHOT-500</g:id>
-      <g:title>Prushot — Energizante y Afrodisíaco Natural 500ml</g:title>
-      <g:description>Jarabe afrodisíaco y energizante natural de 500 ml (25 porciones). Formulado con Borojó, Chontaduro, Maca, Guaraná, Té verde y Vitaminas del complejo B. Aprobado por INVIMA. Mejora la vitalidad, el deseo sexual y el rendimiento físico sin efectos secundarios ni dependencia.</g:description>
+      <g:title>Prushot — Suplemento Natural Energizante y Coadyuvante del Bienestar 500ml</g:title>
+      <g:description>Suplemento líquido natural de 500 ml (25 porciones). Formulado con Borojó, Chontaduro, Maca, Guaraná, Té verde y Vitaminas del complejo B. Aprobado por INVIMA. Coadyuvante del bienestar físico y hormonal: contribuye a mejorar la vitalidad, el rendimiento físico y el equilibrio hormonal de forma natural, sin efectos secundarios ni dependencia.</g:description>
       <g:link>https://drjohnsalazar.com.co/productos/prushot</g:link>
       <g:image_link>https://drjohnsalazar.com.co/img/prushot.png</g:image_link>
       <g:price>120000 COP</g:price>
@@ -19,7 +19,7 @@
       <g:condition>new</g:condition>
       <g:brand>Dr. John Salazar</g:brand>
       <g:mpn>PRUSHOT-500</g:mpn>
-      <g:product_type>Suplementos naturales &gt; Energizantes y afrodisíacos</g:product_type>
+      <g:product_type>Suplementos naturales &gt; Energizantes y bienestar hormonal</g:product_type>
       <g:google_product_category>5764</g:google_product_category>
       <g:shipping>
         <g:country>CO</g:country>
@@ -35,8 +35,8 @@
     <!-- ══════════════════════════════════════════ -->
     <item>
       <g:id>HAMAMELIS-COMPLEX</g:id>
-      <g:title>Hamamelis + Castaño de Indias Complex — Circulación y Salud Venosa</g:title>
-      <g:description>Tratamiento natural de doble acción: cápsulas (500 mg) + gotas (30 ml). Formulado con Hamamelis virginica, Castaño de Indias, Ortiga y Magnesia Carbónica. Alivia piernas pesadas e hinchadas, mejora la circulación venosa y ayuda a prevenir várices. Ciclo de 30 días.</g:description>
+      <g:title>Hamamelis + Castaño de Indias Complex — Coadyuvante para la Circulación 500mg</g:title>
+      <g:description>Suplemento natural de doble acción: cápsulas (500 mg) + gotas (30 ml). Formulado con Hamamelis virginica, Castaño de Indias, Ortiga y Magnesia Carbónica. Coadyuvante para el bienestar de las piernas y la circulación: contribuye a reducir la sensación de pesadez, favorece el retorno venoso y apoya el bienestar de los miembros inferiores. Ciclo de 30 días.</g:description>
       <g:link>https://drjohnsalazar.com.co/productos/hamamelis</g:link>
       <g:image_link>https://drjohnsalazar.com.co/img/hamamelis.png</g:image_link>
       <g:price>95000 COP</g:price>
@@ -60,8 +60,8 @@
     <!-- ══════════════════════════════════════════ -->
     <item>
       <g:id>EP11-500</g:id>
-      <g:title>EP11 — Energía, Memoria y Vitalidad Natural 500ml</g:title>
-      <g:description>Suplemento líquido natural de 500 ml (12.5 porciones). Formulado con Maca, Chontaduro, Borojó, Feijoa, Noni, Colágeno hidrolizado, Stevia, Vitaminas y Minerales. Combate el cansancio, mejora la memoria y concentración, fortalece piel, cabello y uñas. Sin azúcar ni cafeína — apto para diabéticos e hipertensos.</g:description>
+      <g:title>EP11 — Suplemento Natural de Energía, Memoria y Vitalidad 500ml</g:title>
+      <g:description>Suplemento líquido natural de 500 ml (12.5 porciones). Formulado con Maca, Chontaduro, Borojó, Feijoa, Noni, Colágeno hidrolizado, Stevia, Vitaminas y Minerales. Contribuye a reducir la sensación de cansancio físico y mental, favorece la concentración y la memoria, y apoya la salud de piel, cabello y uñas gracias al colágeno hidrolizado. Formulado sin azúcar añadida ni cafeína.</g:description>
       <g:link>https://drjohnsalazar.com.co/productos/ep11</g:link>
       <g:image_link>https://drjohnsalazar.com.co/img/ep11.png</g:image_link>
       <g:price>110000 COP</g:price>

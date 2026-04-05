@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Dr. John Salazar — Productos Naturales</title>
+    <link>https://drjohnsalazar.com.co</link>
+    <description>Productos naturales formulados por el Dr. John Salazar, especialista en Medicina Biológica y Flebología.</description>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- PRUSHOT                                     -->
+    <!-- ══════════════════════════════════════════ -->
+    <item>
+      <g:id>PRUSHOT-500</g:id>
+      <g:title>Prushot — Energizante y Afrodisíaco Natural 500ml</g:title>
+      <g:description>Jarabe afrodisíaco y energizante natural de 500 ml (25 porciones). Formulado con Borojó, Chontaduro, Maca, Guaraná, Té verde y Vitaminas del complejo B. Aprobado por INVIMA. Mejora la vitalidad, el deseo sexual y el rendimiento físico sin efectos secundarios ni dependencia.</g:description>
+      <g:link>https://drjohnsalazar.com.co/productos/prushot</g:link>
+      <g:image_link>https://drjohnsalazar.com.co/img/prushot.png</g:image_link>
+      <g:price>120000 COP</g:price>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Dr. John Salazar</g:brand>
+      <g:mpn>PRUSHOT-500</g:mpn>
+      <g:product_type>Suplementos naturales &gt; Energizantes y afrodisíacos</g:product_type>
+      <g:google_product_category>5764</g:google_product_category>
+      <g:shipping>
+        <g:country>CO</g:country>
+        <g:price>0 COP</g:price>
+      </g:shipping>
+      <g:shipping_weight>0.6 kg</g:shipping_weight>
+      <g:identifier_exists>yes</g:identifier_exists>
+      <g:return_policy_label>return_policy_label</g:return_policy_label>
+    </item>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- HAMAMELIS + CASTAÑO DE INDIAS COMPLEX       -->
+    <!-- ══════════════════════════════════════════ -->
+    <item>
+      <g:id>HAMAMELIS-COMPLEX</g:id>
+      <g:title>Hamamelis + Castaño de Indias Complex — Circulación y Salud Venosa</g:title>
+      <g:description>Tratamiento natural de doble acción: cápsulas (500 mg) + gotas (30 ml). Formulado con Hamamelis virginica, Castaño de Indias, Ortiga y Magnesia Carbónica. Alivia piernas pesadas e hinchadas, mejora la circulación venosa y ayuda a prevenir várices. Ciclo de 30 días.</g:description>
+      <g:link>https://drjohnsalazar.com.co/productos/hamamelis</g:link>
+      <g:image_link>https://drjohnsalazar.com.co/img/hamamelis.png</g:image_link>
+      <g:price>95000 COP</g:price>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Dr. John Salazar</g:brand>
+      <g:mpn>HAMAMELIS-COMPLEX</g:mpn>
+      <g:product_type>Suplementos naturales &gt; Circulación y salud venosa</g:product_type>
+      <g:google_product_category>5764</g:google_product_category>
+      <g:shipping>
+        <g:country>CO</g:country>
+        <g:price>0 COP</g:price>
+      </g:shipping>
+      <g:shipping_weight>0.4 kg</g:shipping_weight>
+      <g:identifier_exists>yes</g:identifier_exists>
+      <g:return_policy_label>return_policy_label</g:return_policy_label>
+    </item>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- EP11                                        -->
+    <!-- ══════════════════════════════════════════ -->
+    <item>
+      <g:id>EP11-500</g:id>
+      <g:title>EP11 — Energía, Memoria y Vitalidad Natural 500ml</g:title>
+      <g:description>Suplemento líquido natural de 500 ml (12.5 porciones). Formulado con Maca, Chontaduro, Borojó, Feijoa, Noni, Colágeno hidrolizado, Stevia, Vitaminas y Minerales. Combate el cansancio, mejora la memoria y concentración, fortalece piel, cabello y uñas. Sin azúcar ni cafeína — apto para diabéticos e hipertensos.</g:description>
+      <g:link>https://drjohnsalazar.com.co/productos/ep11</g:link>
+      <g:image_link>https://drjohnsalazar.com.co/img/ep11.png</g:image_link>
+      <g:price>110000 COP</g:price>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Dr. John Salazar</g:brand>
+      <g:mpn>EP11-500</g:mpn>
+      <g:product_type>Suplementos naturales &gt; Energía y memoria</g:product_type>
+      <g:google_product_category>5764</g:google_product_category>
+      <g:shipping>
+        <g:country>CO</g:country>
+        <g:price>0 COP</g:price>
+      </g:shipping>
+      <g:shipping_weight>0.6 kg</g:shipping_weight>
+      <g:identifier_exists>yes</g:identifier_exists>
+      <g:return_policy_label>return_policy_label</g:return_policy_label>
+    </item>
+
+  </channel>
+</rss>

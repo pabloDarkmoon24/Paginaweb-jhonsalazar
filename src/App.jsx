@@ -20,6 +20,7 @@ import VentasWompi from './pages/admin/ventas/VentasWompi';
 import Leads from './pages/admin/leads/Leads';
 import AdminProductos from './pages/admin/productos/AdminProductos';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import PoliticaDevoluciones from './pages/pagina/PoliticaDevoluciones';
 import ScrollToTop from './components/common/ScrollToTop';
 import usePageTracking from './hooks/usePageTracking';
 
@@ -43,6 +44,7 @@ const AppContent = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/tienda" element={<Tienda />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/politica-devoluciones" element={<PoliticaDevoluciones />} />
 
           {/* Admin login */}
           <Route path="/admin/login" element={<AdminLogin />} />

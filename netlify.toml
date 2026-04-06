@@ -7,14 +7,7 @@
 [build.environment]
   SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
 
-# Proxy del widget de chat — evita carga de script externo (mejor seguridad)
-[[redirects]]
-  from   = "/widget-chat.js"
-  to     = "https://consultoriobackend-production.up.railway.app/widget-chat.js"
-  status = 200
-  force  = true
-
-# Headers de seguridad para todas las páginas
+#Headers de seguridad para todas las páginas
 [[headers]]
   for = "/*"
   [headers.values]
@@ -23,7 +16,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.googleapis.com https://*.firebaseapp.com https://*.firebase.com https://firestore.googleapis.com https://securetoken.googleapis.com https://identitytoolkit.googleapis.com https://consultoriobackend-production.up.railway.app; img-src 'self' data: blob: https:; frame-ancestors 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://consultoriobackend-production.up.railway.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.googleapis.com https://*.firebaseapp.com https://*.firebase.com https://firestore.googleapis.com https://securetoken.googleapis.com https://identitytoolkit.googleapis.com https://consultoriobackend-production.up.railway.app; img-src 'self' data: blob: https:; frame-ancestors 'none'"
 
 # SPA fallback
 [[redirects]]

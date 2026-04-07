@@ -1,8 +1,33 @@
 // App.jsx - Componente principal de la aplicación
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import './App.css';
+
+// Insignia Google Customer Reviews (aparece en todas las páginas públicas)
+const GoogleMerchantBadge = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.id = 'merchantWidgetScript';
+    script.src = 'https://www.gstatic.com/shopping/merchant/merchantwidget.js';
+    script.defer = true;
+    script.addEventListener('load', () => {
+      if (window.merchantwidget) {
+        window.merchantwidget.start({
+          merchant_id: 5760217929,
+          position:    'BOTTOM_RIGHT',
+        });
+      }
+    });
+    document.body.appendChild(script);
+    return () => {
+      const existing = document.getElementById('merchantWidgetScript');
+      if (existing) document.body.removeChild(existing);
+    };
+  }, []);
+  return null;
+};
 import { General } from './pages/general';
 import { Prushot } from './pages/pagina/Productos/Prushot/prushot';
 import Contacto from './pages/pagina/contacto/PrushotContacto';
@@ -33,6 +58,7 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
+      {!isAdmin && <GoogleMerchantBadge />}
       {!isAdmin && <Navbar />}
       <div className={isAdmin ? '' : 'App'}>
         <Routes>

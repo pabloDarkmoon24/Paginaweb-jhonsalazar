@@ -1,10 +1,22 @@
 // Checkout.jsx - Página de pago contra entrega
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 import { createOrder } from '../../../services/ordersService';
 import { formatPrice } from '../../../utils/formatters';
 import './Checkout.css';
+
+// Calcula fecha estimada de entrega (N días hábiles desde hoy)
+function estimatedDeliveryDate(businessDays = 7) {
+  const date = new Date();
+  let added = 0;
+  while (added < businessDays) {
+    date.setDate(date.getDate() + 1);
+    const day = date.getDay();
+    if (day !== 0 && day !== 6) added++;
+  }
+  return date.toISOString().split('T')[0]; // YYYY-MM-DD
+}
 
 const Checkout = () => {
   const { items, total, clearCart, isEmpty } = useCart();
@@ -59,6 +71,33 @@ const Checkout = () => {
       setLoading(false);
     }
   };
+
+  // Google Customer Reviews — se activa al confirmar el pedido
+  useEffect(() => {
+    if (!success) return;
+
+    window.renderOptIn = function () {
+      window.gapi.load('surveyoptin', function () {
+        window.gapi.surveyoptin.render({
+          merchant_id:            5760217929,
+          order_id:               orderNumber,
+          email:                  form.email,
+          delivery_country:       'CO',
+          estimated_delivery_date: estimatedDeliveryDate(7),
+        });
+      });
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://apis.google.com/js/platform.js?onload=renderOptIn';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [success, orderNumber, form.email]);
 
   // Estado de éxito
   if (success) {

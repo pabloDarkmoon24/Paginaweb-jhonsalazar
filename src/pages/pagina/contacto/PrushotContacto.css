@@ -203,6 +203,75 @@
 }
 
 /* ============================================
+   MAPA
+   ============================================ */
+
+.contacto-mapa {
+  background: #f5f7f8;
+  padding: 60px 24px 70px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contacto-mapa-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contacto-mapa-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #162530;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contacto-mapa-desc {
+  font-size: 1rem;
+  color: #66747f;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.contacto-mapa-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(50, 65, 73, 0.12);
+}
+
+.contacto-mapa-wrapper iframe {
+  display: block;
+  width: 100%;
+}
+
+.contacto-mapa-btn {
+  margin-top: 8px;
+  display: inline-block;
+  background: #1a2e35;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contacto-mapa-btn:hover {
+  background: #f47a20;
+  transform: scale(1.03);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 

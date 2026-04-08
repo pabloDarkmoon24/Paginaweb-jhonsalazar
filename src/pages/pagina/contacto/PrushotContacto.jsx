@@ -34,8 +34,8 @@ const PrushotContacto = () => {
   return (
     <>
     <SEO
-      title="Contacto — Agenda tu consulta"
-      description="Contáctate con el Dr. John Salazar, especialista en Medicina Biológica y Flebología. Agenda tu consulta o resuelve tus dudas sobre nuestros productos naturales."
+      title="Contacto — Agenda tu consulta con el Dr. John Salazar en Pereira"
+      description="Contáctate con el Dr. John Salazar, especialista en Medicina Biológica y Flebología en Pereira. Agenda tu consulta para tratamiento de várices sin cirugía o resuelve tus dudas sobre nuestros productos naturales."
       path="/contacto"
     />
     <section
@@ -100,6 +100,34 @@ const PrushotContacto = () => {
           </div>
 
         </div>
+      </div>
+    </section>
+
+    {/* Sección mapa */}
+    <section className="contacto-mapa">
+      <div className="contacto-mapa-inner">
+        <h2 className="contacto-mapa-title">¿Dónde estamos?</h2>
+        <p className="contacto-mapa-desc">Consultorio del Dr. John Salazar — Pereira, Risaralda, Colombia</p>
+        <div className="contacto-mapa-wrapper">
+          <iframe
+            title="Ubicación Dr. John Salazar"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOzP6oPGlM7wDDOAWwUc2LCtw3082qKkI&q=4.8044055,-75.6902629&zoom=16&language=es"
+            width="100%"
+            height="420"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=4.8044055,-75.6902629"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contacto-mapa-btn"
+        >
+          Cómo llegar
+        </a>
       </div>
     </section>
     </>

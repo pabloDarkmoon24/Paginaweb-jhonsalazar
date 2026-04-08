@@ -111,7 +111,7 @@ const PrushotContacto = () => {
         <div className="contacto-mapa-wrapper">
           <iframe
             title="Ubicación Dr. John Salazar"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOzP6oPGlM7wDDOAWwUc2LCtw3082qKkI&q=4.8044055,-75.6902629&zoom=16&language=es"
+            src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_FIREBASE_API_KEY}&q=4.8044055,-75.6902629&zoom=16&language=es`}
             width="100%"
             height="420"
             style={{ border: 0 }}
@@ -121,7 +121,7 @@ const PrushotContacto = () => {
           />
         </div>
         <a
-          href="https://www.google.com/maps/dir/?api=1&destination=4.8044055,-75.6902629"
+          href="https://www.google.com/maps/dir/?api=1&destination=4.8044055%2C-75.6902629"
           target="_blank"
           rel="noopener noreferrer"
           className="contacto-mapa-btn"

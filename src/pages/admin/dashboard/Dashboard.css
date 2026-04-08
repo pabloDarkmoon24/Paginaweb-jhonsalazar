@@ -126,13 +126,15 @@
   white-space: nowrap;
 }
 
-.admin-badge--wompi            { background: #ecfdf5; color: var(--admin-success); }
-.admin-badge--cod              { background: #fffbeb; color: var(--admin-warning); }
-.admin-badge--status-pending   { background: #fffbeb; color: var(--admin-warning); }
-.admin-badge--status-paid      { background: #ecfdf5; color: var(--admin-success); }
-.admin-badge--status-shipped   { background: #eff6ff; color: var(--admin-info);    }
-.admin-badge--status-completed { background: #ecfdf5; color: #065f46;              }
-.admin-badge--status-cancelled { background: #fef2f2; color: var(--admin-danger);  }
+.admin-badge--wompi             { background: #ecfdf5; color: var(--admin-success); }
+.admin-badge--online            { background: #eff6ff; color: #1d4ed8; }
+.admin-badge--cod               { background: #fffbeb; color: var(--admin-warning); }
+.admin-badge--status-pending    { background: #fffbeb; color: var(--admin-warning); }
+.admin-badge--status-paid       { background: #ecfdf5; color: var(--admin-success); }
+.admin-badge--status-shipped    { background: #eff6ff; color: var(--admin-info);    }
+.admin-badge--status-completed  { background: #ecfdf5; color: #065f46;              }
+.admin-badge--status-cancelled  { background: #fef2f2; color: var(--admin-danger);  }
+.admin-badge--status-rejected   { background: #fef2f2; color: var(--admin-danger);  }
 .admin-badge--pending          { background: #fffbeb; color: var(--admin-warning); }
 .admin-badge--contacted        { background: #eff6ff; color: var(--admin-info);    }
 .admin-badge--scheduled        { background: #ecfdf5; color: var(--admin-success); }

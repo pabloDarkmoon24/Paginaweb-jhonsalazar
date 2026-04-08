@@ -11,7 +11,7 @@ import logo from '../../assets/Home/logo.png'
 
 const NAV_ITEMS = [
   { to: '/admin',                label: 'Dashboard',     Icon: LuLayoutDashboard, end: true },
-  { to: '/admin/contra-entrega', label: 'Entregas',      Icon: LuPackage },
+  { to: '/admin/contra-entrega', label: 'Contra Entrega', Icon: LuPackage },
   { to: '/admin/ventas',         label: 'Ventas',        Icon: LuCreditCard },
   { to: '/admin/leads',          label: 'Leads',         Icon: LuUsers },
   { to: '/admin/productos',      label: 'Productos',     Icon: LuShoppingBag },

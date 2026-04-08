@@ -8,12 +8,12 @@ import { generateOrderNumber } from '../utils/formatters';
 
 const COLLECTION = 'orders';
 
-// Crear orden (wompi o contra entrega)
+// Crear orden (epayco, wompi o contra entrega)
 export const createOrder = async ({ customer, items, total, paymentMethod, wompiTransactionId = null }) => {
   const orderData = {
     orderNumber: generateOrderNumber(),
-    paymentMethod, // 'wompi' | 'contra_entrega'
-    status: paymentMethod === 'wompi' ? 'paid' : 'pending',
+    paymentMethod, // 'epayco' | 'wompi' | 'contra_entrega'
+    status: 'pending',
     customer,
     items,
     total,
@@ -55,4 +55,13 @@ export const getOrderById = async (orderId) => {
   const snap = await getDoc(ref);
   if (!snap.exists()) return null;
   return { id: snap.id, ...snap.data() };
+};
+
+// Obtener una orden por número de orden
+export const getOrderByOrderNumber = async (orderNumber) => {
+  const q = query(collection(db, COLLECTION), where('orderNumber', '==', orderNumber));
+  const snapshot = await getDocs(q);
+  if (snapshot.empty) return null;
+  const d = snapshot.docs[0];
+  return { id: d.id, ...d.data() };
 };

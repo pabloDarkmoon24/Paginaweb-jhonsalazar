@@ -37,6 +37,7 @@ import Footer from './pages/pagina/footer/Footer';
 import Hamamelis from './pages/pagina/Productos/Hamamelis/Hamamelis';
 import Tienda from './pages/pagina/tienda/Tienda';
 import Checkout from './pages/pagina/checkout/Checkout';
+import ConfirmacionEpayco from './pages/pagina/checkout/ConfirmacionEpayco';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminLayout from './pages/admin/AdminLayout';
 import Dashboard from './pages/admin/dashboard/Dashboard';
@@ -70,6 +71,7 @@ const AppContent = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/tienda" element={<Tienda />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout/confirmacion" element={<ConfirmacionEpayco />} />
           <Route path="/politica-devoluciones" element={<PoliticaDevoluciones />} />
 
           {/* Admin login */}

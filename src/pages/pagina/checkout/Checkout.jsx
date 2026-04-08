@@ -1,5 +1,5 @@
-// Checkout.jsx - Página de pago contra entrega
-import { useState, useEffect } from 'react';
+// Checkout.jsx - Página de pago
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 import { createOrder } from '../../../services/ordersService';
@@ -23,6 +23,8 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [orderNumber, setOrderNumber] = useState('');
+  const [epaycoReady, setEpaycoReady] = useState(false);
+  const epaycoHandlerRef = useRef(null);
 
   const [form, setForm] = useState({
     name: '',
@@ -33,6 +35,28 @@ const Checkout = () => {
   });
 
   const [errors, setErrors] = useState({});
+
+  // Cargar script de ePayco
+  useEffect(() => {
+    if (document.getElementById('epayco-script')) {
+      setEpaycoReady(true);
+      return;
+    }
+    const script = document.createElement('script');
+    script.id = 'epayco-script';
+    script.src = 'https://checkout.epayco.co/checkout.js';
+    script.onload = () => setEpaycoReady(true);
+    document.body.appendChild(script);
+  }, []);
+
+  // Configurar handler de ePayco cuando el script esté listo
+  useEffect(() => {
+    if (!epaycoReady || !window.ePayco) return;
+    epaycoHandlerRef.current = window.ePayco.checkout.configure({
+      key: import.meta.env.VITE_EPAYCO_PUBLIC_KEY,
+      test: false,
+    });
+  }, [epaycoReady]);
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -48,6 +72,52 @@ const Checkout = () => {
     if (!form.city.trim()) newErrors.city = 'Requerido';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+  };
+
+  // Pago con ePayco
+  const handleEpayco = async () => {
+    if (!validate()) return;
+    if (!epaycoHandlerRef.current) {
+      alert('El sistema de pago aún está cargando. Intenta de nuevo en un momento.');
+      return;
+    }
+    setLoading(true);
+    try {
+      const order = await createOrder({
+        customer: form,
+        items: items.map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity })),
+        total,
+        paymentMethod: 'epayco',
+      });
+
+      const description = items.map(i => `${i.name} x${i.quantity}`).join(', ');
+
+      epaycoHandlerRef.current.open({
+        name: 'Dr. John Salazar — Productos Naturales',
+        description,
+        invoice: order.orderNumber,
+        currency: 'cop',
+        amount: String(total),
+        tax_base: String(total),
+        tax: '0',
+        country: 'co',
+        lang: 'es',
+        external: 'false',
+        response: 'https://drjohnsalazar.com.co/checkout/confirmacion',
+        confirmation: 'https://epaycowebhook-i3szq2fqna-uc.a.run.app',
+        email_billing: form.email,
+        name_billing: form.name,
+        address_billing: form.address,
+        phone_billing: form.phone,
+        extra1: order.orderNumber,
+        extra2: form.city,
+      });
+    } catch (err) {
+      console.error(err);
+      alert('Error iniciando el pago. Intenta de nuevo.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Pago contra entrega
@@ -72,7 +142,7 @@ const Checkout = () => {
     }
   };
 
-  // Google Customer Reviews — se activa al confirmar el pedido
+  // Google Customer Reviews — se activa al confirmar el pedido (contra entrega)
   useEffect(() => {
     if (!success) return;
 
@@ -99,7 +169,7 @@ const Checkout = () => {
     };
   }, [success, orderNumber, form.email]);
 
-  // Estado de éxito
+  // Estado de éxito (contra entrega)
   if (success) {
     return (
       <div className="checkout-success">
@@ -192,18 +262,18 @@ const Checkout = () => {
             <h2 className="checkout-section-title" style={{ marginTop: '2rem' }}>Método de pago</h2>
 
             <div className="checkout-payment-methods">
-              {/* Wompi desactivado temporalmente */}
-              {/* <button
-                className="checkout-pay-btn checkout-pay-wompi"
-                onClick={handleWompi}
-                disabled={loading || !wompiReady}
+              {/* ePayco — tarjeta, PSE, Nequi, etc. */}
+              <button
+                className="checkout-pay-btn checkout-pay-epayco"
+                onClick={handleEpayco}
+                disabled={loading || !epaycoReady}
               >
                 <span className="checkout-pay-icon">💳</span>
                 <div>
-                  <strong>Pagar con Wompi</strong>
-                  <small>Tarjeta, PSE, Nequi, Bancolombia</small>
+                  <strong>Pagar en línea</strong>
+                  <small>Tarjeta, PSE, Nequi, Bancolombia y más</small>
                 </div>
-              </button> */}
+              </button>
 
               {/* Contra entrega */}
               <button

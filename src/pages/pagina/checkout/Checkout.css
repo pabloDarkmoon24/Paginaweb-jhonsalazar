@@ -167,6 +167,13 @@
   box-shadow: 0 6px 20px rgba(50, 65, 73, 0.3);
 }
 
+.checkout-pay-epayco { background-color: #00b050; color: #fff; }
+.checkout-pay-epayco:hover:not(:disabled) {
+  background-color: #009040;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 176, 80, 0.35);
+}
+
 .checkout-pay-cod {
   background-color: #f5f7f8;
   color: #324149;
@@ -333,6 +340,7 @@
   .checkout-success-sub { font-size: 13px; }
 
   .checkout-pay-wompi:hover:not(:disabled),
+  .checkout-pay-epayco:hover:not(:disabled),
   .checkout-pay-cod:hover:not(:disabled) {
     transform: none;
     box-shadow: none;

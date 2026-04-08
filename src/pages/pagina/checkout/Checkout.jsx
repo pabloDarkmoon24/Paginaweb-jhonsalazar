@@ -102,7 +102,7 @@ const Checkout = () => {
         tax: '0',
         country: 'co',
         lang: 'es',
-        external: 'false',
+        external: 'true',
         response: 'https://drjohnsalazar.com.co/checkout/confirmacion',
         confirmation: 'https://epaycowebhook-i3szq2fqna-uc.a.run.app',
         email_billing: form.email,

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import EP11Hero from "./parte1/EP11Hero";
 import EP11Info from "./parte2/EP11Info";
 import EP11Composicion from "./parte3/EP11Composicion";
@@ -105,6 +106,18 @@ const ep11Schema = {
 };
 
 export function EP11() {
+  useEffect(() => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_ids:  ['EP11-500'],
+        content_name: 'EP11',
+        content_type: 'product',
+        value:        110000,
+        currency:     'COP',
+      });
+    }
+  }, []);
+
   return (
     <>
       <SEO

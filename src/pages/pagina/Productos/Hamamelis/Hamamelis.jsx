@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import HamameliHero from "./parte1/HamameliHero";
 import HamameliInfo from "./parte2/HamameliInfo";
 import HamameliComposicion from "./parte3/HamameliComposicion";
@@ -105,6 +106,18 @@ const hamameliSchema = {
 };
 
 function Hamamelis() {
+  useEffect(() => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_ids:  ['HAMAMELIS-COMPLEX'],
+        content_name: 'Hamamelis + Castaño de Indias',
+        content_type: 'product',
+        value:        95000,
+        currency:     'COP',
+      });
+    }
+  }, []);
+
   return (
     <>
       <SEO

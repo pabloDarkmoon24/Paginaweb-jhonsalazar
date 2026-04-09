@@ -35,6 +35,16 @@ const ConfirmacionEpayco = () => {
     if (response === 'Aceptada' || response === 'Accepted') {
       clearCart();
       setStatus('approved');
+
+      // Meta Pixel — Purchase (ePayco aprobado)
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Purchase', {
+          value:        parseFloat(amount) || 0,
+          currency:     'COP',
+          content_type: 'product',
+          order_id:     orderNumber || '',
+        });
+      }
     } else if (response === 'Rechazada' || response === 'Rejected' || response === 'Failed') {
       setStatus('rejected');
     } else {

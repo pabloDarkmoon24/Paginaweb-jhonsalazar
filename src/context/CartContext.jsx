@@ -41,7 +41,7 @@ export const CartProvider = ({ children }) => {
   const addItem = (product, quantity = 1) => {
     setItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === product.id);
-      
+
       if (existingItem) {
         return prevItems.map(item =>
           item.id === product.id
@@ -49,9 +49,20 @@ export const CartProvider = ({ children }) => {
             : item
         );
       }
-      
+
       return [...prevItems, { ...product, quantity }];
     });
+
+    // Meta Pixel — AddToCart
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'AddToCart', {
+        content_ids:  [product.id],
+        content_name: product.name,
+        content_type: 'product',
+        value:        product.price * quantity,
+        currency:     'COP',
+      });
+    }
   };
 
   // Remover producto del carrito

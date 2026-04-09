@@ -26,6 +26,11 @@ const usePageTracking = () => {
     lastPath.current = location.pathname;
 
     recordVisit(pageName).catch(() => {});
+
+    // Meta Pixel — PageView en cada navegación de la SPA
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView');
+    }
   }, [location.pathname]);
 };
 

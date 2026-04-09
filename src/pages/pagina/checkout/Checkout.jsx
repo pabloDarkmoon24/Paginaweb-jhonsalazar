@@ -36,6 +36,19 @@ const Checkout = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Meta Pixel — InitiateCheckout al abrir el checkout
+  useEffect(() => {
+    if (isEmpty) return;
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'InitiateCheckout', {
+        value:       total,
+        currency:    'COP',
+        num_items:   items.reduce((s, i) => s + i.quantity, 0),
+        content_ids: items.map(i => i.id),
+      });
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Cargar script de ePayco
   useEffect(() => {
     if (document.getElementById('epayco-script')) {
@@ -131,6 +144,18 @@ const Checkout = () => {
         total,
         paymentMethod: 'contra_entrega',
       });
+
+      // Meta Pixel — Purchase (contra entrega)
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Purchase', {
+          value:       total,
+          currency:    'COP',
+          content_ids: items.map(i => i.id),
+          content_type: 'product',
+          order_id:    order.orderNumber,
+        });
+      }
+
       clearCart();
       setOrderNumber(order.orderNumber);
       setSuccess(true);

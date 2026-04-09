@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import PrushotHero from "./parte1/PrushotHero";
 import PrushotInfo from "./parte2/PrushotInfo";
 import PrushotComposicion from "./parte3/PrushotComposicion";
@@ -106,6 +107,18 @@ const prushotSchema = {
 };
 
 export function Prushot() {
+  useEffect(() => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_ids:  ['PRUSHOT-500'],
+        content_name: 'PRUSHOT',
+        content_type: 'product',
+        value:        120000,
+        currency:     'COP',
+      });
+    }
+  }, []);
+
   return (
     <>
       <SEO

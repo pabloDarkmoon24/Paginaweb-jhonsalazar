@@ -11,12 +11,12 @@ import imgVitaminas from '../../../../../assets/Prushot/Ingrediente-6-vitaminas.
 
 
 const cards = [
-  imgBorojo,
-  imgChontaduro,
-  imgGuarana,
-  imgTomate,
-  imgTeVerde,
-  imgVitaminas,
+  { src: imgBorojo,      alt: 'Borojó — fruta tropical energizante' },
+  { src: imgChontaduro,  alt: 'Chontaduro — fuente natural de vitaminas y energía' },
+  { src: imgGuarana,     alt: 'Guaraná — estimulante natural de larga duración' },
+  { src: imgTomate,      alt: 'Tomate de árbol — rico en antioxidantes y vitaminas' },
+  { src: imgTeVerde,     alt: 'Té verde — antioxidante y activador metabólico' },
+  { src: imgVitaminas,   alt: 'Complejo vitamínico B — energía celular y bienestar' },
 ];
 
 const PrushotComposicion = () => {
@@ -60,8 +60,8 @@ const PrushotComposicion = () => {
           <div className="prushot-carousel-track">
             <img
               key={current}
-              src={cards[current]}
-              alt={`Ingrediente ${current + 1}`}
+              src={cards[current].src}
+              alt={cards[current].alt}
               className={`prushot-carousel-card ${sliding === 'left' ? 'slide-out-left' : ''} ${sliding === 'right' ? 'slide-out-right' : ''} ${!sliding ? 'slide-in' : ''}`}
             />
           </div>

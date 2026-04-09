@@ -8,7 +8,13 @@ import imgChontaduro from '../../../../../assets/EP11/Ingrediente-chontaduro.png
 import imgColageno   from '../../../../../assets/EP11/Ingrediente-colageno.png';
 import imgVitaminas  from '../../../../../assets/EP11/Ingrediente-vitaminas.png';
 
-const cards = [imgStevia, imgMaca, imgChontaduro, imgColageno, imgVitaminas];
+const cards = [
+  { src: imgStevia,      alt: 'Stevia — edulcorante natural sin calorías, apto para diabéticos' },
+  { src: imgMaca,        alt: 'Maca — adaptógeno que mejora la energía y la función cognitiva' },
+  { src: imgChontaduro,  alt: 'Chontaduro — fuente de proteínas, vitaminas y energía sostenida' },
+  { src: imgColageno,    alt: 'Colágeno hidrolizado — fortalece piel, cabello, uñas y articulaciones' },
+  { src: imgVitaminas,   alt: 'Complejo vitamínico — soporte inmunológico y energía celular' },
+];
 
 const EP11Composicion = () => {
   const [current, setCurrent] = useState(0);
@@ -47,8 +53,8 @@ const EP11Composicion = () => {
           <div className="ep11-carousel-track">
             <img
               key={current}
-              src={cards[current]}
-              alt={`Ingrediente ${current + 1}`}
+              src={cards[current].src}
+              alt={cards[current].alt}
               className={`ep11-carousel-card ${
                 sliding === 'left'  ? 'slide-out-left'  :
                 sliding === 'right' ? 'slide-out-right' : 'slide-in'

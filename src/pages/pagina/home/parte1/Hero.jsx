@@ -28,11 +28,10 @@ export const Hero = () => {
           {/* Botones CTA */}
           <div className="hero-buttons">
             <Link to="/tienda" className="hero-btn hero-btn-primary">
-              <img src={btn1} alt="" />
+              <img src={btn1} alt="Ver productos" />
             </Link>
             <Link to="/contacto" className="hero-btn hero-btn-secondary">
-              <img src={btn2} alt="" />
-
+              <img src={btn2} alt="Agendar cita" />
             </Link>
           </div>
         </div>

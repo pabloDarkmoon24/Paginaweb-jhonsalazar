@@ -32,7 +32,7 @@ const EP11Seguridad = () => {
     <Link to="/tienda" className="ep11-seguridad-btn">
       <img src={btnComprar} alt="Comprar ahora" className="ep11-seguridad-btn-img" />
     </Link>
-    <Link to="/contacto" className="prushot-seguridad-btn-comprar">
+    <Link to="/contacto" className="ep11-seguridad-btn">
           <img src={btnDoctor} alt="Comunicarme con el Doctor" className="ep11-seguridad-btn-img" />
     </Link>
   </div>

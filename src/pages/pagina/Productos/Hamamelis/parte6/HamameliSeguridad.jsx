@@ -32,9 +32,9 @@ const HamameliSeguridad = () => {
         <Link to="/tienda" className="hamseg-btn">
           <img src={btnComprar} alt="Comprar ahora" className="hamseg-btn-img" />
         </Link>
-        <Link to="/contacto" className="prushot-seguridad-btn-comprar">
+        <Link to="/contacto" className="hamseg-btn">
           <img src={btnDoctor} alt="Comunicarme con el Doctor" className="hamseg-btn-img" />
-         </Link>
+        </Link>
 
       </div>
 

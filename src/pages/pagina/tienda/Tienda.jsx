@@ -52,8 +52,8 @@ const Tienda = () => {
   return (
     <>
       <SEO
-        title="Tienda — Productos Naturales"
-        description="Compra los productos naturales del Dr. John Salazar: Prushot, Hamamelis + Castaño de Indias y EP11. Formulados con respaldo clínico. Envío a toda Colombia."
+        title="Tienda — PRUSHOT, Hamamelis y EP11 | Dr. John Salazar"
+        description="Compra PRUSHOT (energía y vitalidad), Hamamelis + Castaño de Indias (várices y circulación) y EP11 (memoria y colágeno). Productos naturales con respaldo clínico del Dr. John Salazar. Envío gratis a toda Colombia."
         path="/tienda"
         type="website"
       />

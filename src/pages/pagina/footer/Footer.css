@@ -6,7 +6,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   background-color: #1e2e35;
-  padding: 20px 0;
+  padding: 40px 0 24px;
 }
 
 .footer-container {
@@ -18,13 +18,53 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
+.footer-logo {
+  height: 200px;
+  width: auto;
+  display: block;
+}
+
+/* Info del negocio */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-info-text {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4ade80;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.2s;
+}
+
+.footer-whatsapp:hover {
+  color: #86efac;
+}
+
+/* Links */
 .footer-links {
   display: flex;
   gap: 24px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-link {
@@ -38,14 +78,23 @@
   color: #ffffff;
 }
 
-.footer-logo {
-  height: 200px;
-  width: auto;
-  display: block;
+/* Separador */
+.footer-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+/* Copyright */
+.footer-copy {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin: 0;
+  text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .footer-logo { height: 36px; }
-  .footer-container { padding: 0 20px; }
+  .footer-logo { height: 120px; }
+  .footer-container { padding: 0 20px; gap: 16px; }
+  .footer-links { gap: 16px; }
 }

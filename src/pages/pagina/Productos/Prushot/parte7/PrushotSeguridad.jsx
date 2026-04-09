@@ -36,7 +36,7 @@ const PrushotSeguridad = () => {
           <img src={btnComprar} alt="Comprar ahora" className="prushot-seguridad-btn-img" />
         </Link>
         <Link to="/contacto" className="prushot-seguridad-btn-comprar">
-          <img src={btndc} alt="Comprar ahora" className="prushot-seguridad-btn-img" />
+          <img src={btndc} alt="Comunicarme con el Doctor" className="prushot-seguridad-btn-img" />
         </Link>
       </div>
 

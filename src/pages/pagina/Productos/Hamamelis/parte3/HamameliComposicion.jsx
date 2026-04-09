@@ -7,7 +7,12 @@ import imgCastaño   from '../../../../../assets/Hamamelis/Ingrediente-castaño-
 import imgMagnesia  from '../../../../../assets/Hamamelis/Ingrediente-magnesia.png';
 import imgOrtiga    from '../../../../../assets/Hamamelis/Ingrediente-ortiga.png';
 
-const cards = [imgHamamelis, imgCastaño, imgMagnesia, imgOrtiga];
+const cards = [
+  { src: imgHamamelis, alt: 'Hamamelis virginica — astringente natural que fortalece las venas' },
+  { src: imgCastaño,   alt: 'Castaño de Indias — mejora el retorno venoso y reduce la inflamación' },
+  { src: imgMagnesia,  alt: 'Magnesia — mineral esencial para la función muscular y circulatoria' },
+  { src: imgOrtiga,    alt: 'Ortiga — diurético natural que combate la retención de líquidos' },
+];
 
 const HamameliComposicion = () => {
   const [current, setCurrent] = useState(0);
@@ -46,8 +51,8 @@ const HamameliComposicion = () => {
           <div className="hamamelis-carousel-track">
             <img
               key={current}
-              src={cards[current]}
-              alt={`Ingrediente ${current + 1}`}
+              src={cards[current].src}
+              alt={cards[current].alt}
               className={`hamamelis-carousel-card ${
                 sliding === 'left'  ? 'hslide-out-left'  :
                 sliding === 'right' ? 'hslide-out-right' : 'hslide-in'

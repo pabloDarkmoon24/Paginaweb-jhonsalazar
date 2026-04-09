@@ -14,7 +14,7 @@ export default function PoliticaDevoluciones() {
           Política de Devoluciones
         </h1>
         <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: 40 }}>
-          Última actualización: abril de 2025
+          Última actualización: abril de 2026
         </p>
 
         <Section titulo="1. Plazo para devoluciones">

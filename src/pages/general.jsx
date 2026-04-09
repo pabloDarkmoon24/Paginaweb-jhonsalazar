@@ -17,11 +17,30 @@ const homeSchema = {
       "@type": "MedicalBusiness",
       "@id": "https://drjohnsalazar.com.co/#consultorio",
       "name": "Consultorio Dr. John Salazar",
-      "description": "Consulta médica especializada en Medicina Biológica y Flebología. Productos naturales con respaldo clínico.",
+      "description": "Consulta médica especializada en Medicina Biológica y Flebología. Tratamiento de várices sin cirugía. Productos naturales con respaldo clínico.",
       "url": "https://drjohnsalazar.com.co",
       "telephone": "+573113958098",
       "priceRange": "$$",
       "medicalSpecialty": ["Flebología", "Medicina Biológica"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pereira",
+        "addressRegion": "Risaralda",
+        "addressCountry": "CO",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.8044055,
+        "longitude": -75.6902629,
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00",
+        },
+      ],
     },
     {
       "@type": "WebSite",

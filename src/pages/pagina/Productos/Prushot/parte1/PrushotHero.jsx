@@ -17,7 +17,7 @@ return (
     <section className="prushot-hero">
       <div className="prushot-hero-container">
         <div className="prushot-hero-content">
-          <img src={descriptionBox} alt="..." className="prushot-description-box" />
+          <img src={descriptionBox} alt="PRUSHOT — Energía, Deseo y Vitalidad Natural" className="prushot-description-box" />
           <Link to="/tienda" className="prushot-btn-comprar">
             <img src={btnComprar} alt="Comprar ahora" className="prushot-btn-img" />
           </Link>

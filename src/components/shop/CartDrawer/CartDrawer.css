@@ -251,6 +251,23 @@
   background: #f5f7f8;
 }
 
+/* Señales de confianza */
+.cart-trust-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8ecee;
+}
+
+.cart-trust-item {
+  font-size: 0.7rem;
+  color: #4a6570;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+}
+
 .cart-total-row {
   display: flex;
   justify-content: space-between;

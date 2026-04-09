@@ -246,17 +246,19 @@ const Checkout = () => {
                 { name: 'city', label: 'Ciudad', type: 'text', placeholder: 'Bogotá' },
               ].map(field => (
                 <div key={field.name} className="checkout-field">
-                  <label className="checkout-label">{field.label}</label>
+                  <label htmlFor={field.name} className="checkout-label">{field.label}</label>
                   <input
+                    id={field.name}
                     type={field.type}
                     name={field.name}
                     value={form[field.name]}
                     onChange={handleChange}
                     placeholder={field.placeholder}
                     className={`checkout-input ${errors[field.name] ? 'checkout-input--error' : ''}`}
+                    autoComplete={field.name === 'email' ? 'email' : field.name === 'name' ? 'name' : field.name === 'phone' ? 'tel' : 'on'}
                   />
                   {errors[field.name] && (
-                    <span className="checkout-error">{errors[field.name]}</span>
+                    <span className="checkout-error" role="alert">{errors[field.name]}</span>
                   )}
                 </div>
               ))}
@@ -281,6 +283,13 @@ const Checkout = () => {
                 <span>Total</span>
                 <strong>{formatPrice(total)}</strong>
               </div>
+            </div>
+
+            {/* Señales de confianza */}
+            <div className="checkout-trust-bar">
+              <span>🚚 Envío gratis a toda Colombia</span>
+              <span>🔒 Pago 100% seguro</span>
+              <span>↩️ 15 días de devolución</span>
             </div>
 
             {/* Métodos de pago */}

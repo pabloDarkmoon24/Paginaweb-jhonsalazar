@@ -32,7 +32,7 @@ import { General } from './pages/general';
 import { Prushot } from './pages/pagina/Productos/Prushot/prushot';
 import Contacto from './pages/pagina/contacto/PrushotContacto';
 import Navbar from './pages/pagina/navbar/navbar';
-import { EP11 } from './pages/pagina/Productos/EP11/ep11.jsx';
+import { EP11 } from './pages/pagina/Productos/EP11/EP11.jsx';
 import Footer from './pages/pagina/footer/Footer';
 import Hamamelis from './pages/pagina/Productos/Hamamelis/Hamamelis';
 import Tienda from './pages/pagina/tienda/Tienda';

@@ -1,0 +1,888 @@
+/* Varices.css — Landing page tratamiento de várices
+   Design system: usa los colores exactos del sitio
+   #324149 (slate), #66747f (muted), #090f10 (near-black), #c9a84c (gold)
+*/
+
+/* ── Reset local ────────────────────────────────────────────────────────────── */
+.va * { box-sizing: border-box; }
+
+/* ── Layout helpers ─────────────────────────────────────────────────────────── */
+.va-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.va-section {
+  padding: 80px 0;
+}
+
+/* ── Tipografía ─────────────────────────────────────────────────────────────── */
+.va-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 900;
+  color: #324149;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.va-title--light { color: #fff; }
+
+.va-sub {
+  text-align: center;
+  color: #66747f;
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+}
+
+.va-sub--light { color: rgba(255,255,255,0.70); }
+
+.va-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #66747f;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.va-label--gold { color: #c9a84c; }
+
+/* ── Botón WhatsApp ─────────────────────────────────────────────────────────── */
+.va-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.30);
+  font-family: inherit;
+  letter-spacing: 0.01em;
+}
+
+.va-btn-wa--md { font-size: 0.95rem; padding: 12px 24px; }
+.va-btn-wa--lg { font-size: 1.05rem; padding: 15px 30px; }
+
+.va-btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.40);
+}
+
+.va-btn-wa:active { transform: scale(0.97); }
+
+/* ── HERO ───────────────────────────────────────────────────────────────────── */
+.va-hero {
+  background-image: var(--va-bg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.va-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.va-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 40px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  align-items: center;
+  gap: 48px;
+}
+
+.va-hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.va-hero__logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 24px;
+  object-fit: contain;
+  filter: brightness(0);        /* logo blanco → negro sobre fondo blanco */
+}
+
+.va-hero__badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.10);
+  border: 1px solid rgba(201,168,76,0.40);
+  color: #a87e3a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.va-hero__title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.va-hero__title-main {
+  color: #324149;
+  font-weight: 900;
+  font-style: normal;
+  display: block;
+}
+
+.va-hero__title-sub {
+  color: #c9a84c;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.va-hero__title-place {
+  color: #66747f;
+  font-size: 0.55em;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.va-hero__desc {
+  font-size: 1.05rem;
+  color: #66747f;
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.va-hero__desc strong { color: #324149; font-weight: 700; }
+
+.va-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.va-hero__tel {
+  color: #324149;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px solid rgba(50,65,73,0.30);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.va-hero__tel:hover { color: #c9a84c; }
+
+.va-hero__trust {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(50,65,73,0.12);
+  padding-top: 20px;
+}
+
+.va-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  color: #66747f;
+}
+
+.va-trust-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(50,65,73,0.18);
+}
+
+.va-hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.va-hero__doc {
+  max-height: 600px;
+  width: auto;
+  max-width: 120%;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 8px 24px rgba(50,65,73,0.20));
+}
+
+/* ── SÍNTOMAS ───────────────────────────────────────────────────────────────── */
+.va-sintomas { background: #fff; }
+
+.va-sintomas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.va-sintoma-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #f7f8fa;
+  border-radius: 4px;
+  border-left: 3px solid #c9a84c;
+}
+
+.va-sintoma-item__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.va-sintoma-item span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #324149;
+  line-height: 1.4;
+}
+
+.va-sintomas__cta {
+  text-align: center;
+}
+
+.va-sintomas__cta p {
+  color: #66747f;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* ── TRATAMIENTOS ───────────────────────────────────────────────────────────── */
+.va-tratamientos {
+  background-color: #324149;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.va-trat__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.va-trat-card {
+  background: #283540;
+  padding: 36px 28px;
+  border-top: 3px solid #c9a84c;
+  transition: background 0.2s;
+}
+
+.va-trat-card:hover { background: #2f3e47; }
+
+.va-trat-card__num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(201,168,76,0.18);
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.va-trat-card__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.va-trat-card__desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.60);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── DOCTOR ─────────────────────────────────────────────────────────────────── */
+.va-doctor { background: #f7f8fa; }
+
+.va-doctor__inner {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.va-doctor__photo-wrap {
+  position: relative;
+}
+
+.va-doctor__photo {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: top center;
+  box-shadow: 0 16px 56px rgba(50,65,73,0.20);
+  display: block;
+}
+
+.va-doctor__bio {
+  font-size: 1rem;
+  color: #66747f;
+  margin-bottom: 28px;
+  line-height: 1.75;
+}
+
+.va-doctor__bio strong { color: #324149; }
+
+.va-creds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.va-cred {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 4px;
+  border-left: 3px solid #c9a84c;
+  box-shadow: 0 2px 8px rgba(50,65,73,0.06);
+}
+
+.va-cred__año {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #c9a84c;
+  background: rgba(201,168,76,0.10);
+  padding: 3px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+
+.va-cred__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.va-cred__info strong {
+  font-size: 0.9rem;
+  color: #324149;
+  font-weight: 700;
+}
+
+.va-cred__info span {
+  font-size: 0.82rem;
+  color: #66747f;
+}
+
+.va-doctor__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.va-doctor__rating strong { color: #324149; }
+.va-doctor__rating span  { color: #66747f; }
+
+/* ── VIDEOS ─────────────────────────────────────────────────────────────────── */
+.va-videos {
+  background-color: #324149;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.va-videos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.va-video-card {
+  background: #283540;
+  border-radius: 4px;
+  overflow: hidden;
+  border-top: 3px solid #c9a84c;
+}
+
+.va-video-card__frame {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  overflow: hidden;
+}
+
+.va-video-card__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.va-video-card__info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.va-video-card__info strong {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.va-video-card__info span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.60);
+}
+
+/* ── PROCESO ────────────────────────────────────────────────────────────────── */
+.va-proceso { background: #fff; }
+
+.va-proceso__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #f7f8fa;
+  border-top: 3px solid #324149;
+}
+
+.va-proceso__step {
+  background: #fff;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.va-proceso__num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #324149;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.va-proceso__step h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #324149;
+  margin-bottom: 10px;
+}
+
+.va-proceso__step p {
+  font-size: 0.9rem;
+  color: #66747f;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── TESTIMONIOS ────────────────────────────────────────────────────────────── */
+.va-testimonios { background: #f7f8fa; }
+
+.va-testi__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.va-testi-card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 28px 22px;
+  box-shadow: 0 2px 12px rgba(50,65,73,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 3px solid #c9a84c;
+}
+
+.va-testi-card__stars {
+  display: flex;
+  gap: 3px;
+}
+
+.va-testi-card__texto {
+  font-size: 0.92rem;
+  color: #66747f;
+  font-style: italic;
+  line-height: 1.65;
+  flex: 1;
+  margin: 0;
+}
+
+.va-testi-card__autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+.va-testi-card__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #324149;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.va-testi-card__autor div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.va-testi-card__autor strong {
+  font-size: 0.88rem;
+  color: #324149;
+  font-weight: 700;
+}
+
+.va-testi-card__autor span {
+  font-size: 0.8rem;
+  color: #66747f;
+}
+
+/* ── HAMAMELIS ──────────────────────────────────────────────────────────────── */
+.va-hamamelis { background: #fff; }
+
+.va-hamamelis__inner {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  align-items: center;
+  gap: 64px;
+}
+
+.va-hamamelis__desc {
+  color: #66747f;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.va-hamamelis__desc strong { color: #324149; }
+
+.va-hamamelis__btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.va-btn-ver {
+  display: inline-block;
+  padding: 13px 28px;
+  background: #324149;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.18s;
+}
+
+.va-btn-ver:hover {
+  background: #2a373e;
+  transform: translateY(-1px);
+}
+
+.va-hamamelis__img-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.va-hamamelis__img {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(50,65,73,0.14));
+}
+
+/* ── COBERTURA ──────────────────────────────────────────────────────────────── */
+.va-cobertura {
+  background-color: #324149;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.va-ciudades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.va-ciudad-pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,168,76,0.30);
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.80);
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.va-ciudad-pill:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+
+.va-cobertura__note {
+  text-align: center;
+  color: rgba(255,255,255,0.50);
+  font-size: 0.9rem;
+}
+
+.va-cobertura__note strong { color: rgba(255,255,255,0.80); }
+
+/* ── FAQ ────────────────────────────────────────────────────────────────────── */
+.va-faq { background: #f7f8fa; }
+
+.va-faq__list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.va-faq__item {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(50,65,73,0.06);
+}
+
+.va-faq__item[open] {
+  box-shadow: 0 4px 20px rgba(50,65,73,0.10);
+}
+
+.va-faq__pregunta {
+  padding: 18px 22px;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #324149;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  gap: 12px;
+}
+
+.va-faq__pregunta::-webkit-details-marker { display: none; }
+
+.va-faq__pregunta::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #c9a84c;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.va-faq__item[open] .va-faq__pregunta::after { content: '−'; }
+
+.va-faq__respuesta {
+  padding: 0 22px 20px;
+  font-size: 0.92rem;
+  color: #66747f;
+  line-height: 1.7;
+  border-top: 1px solid #f0f0f0;
+  margin: 0;
+}
+
+/* ── CONTACTO ───────────────────────────────────────────────────────────────── */
+.va-contacto {
+  background: #324149;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+}
+
+.va-contacto__inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 32px 40px;
+}
+
+.va-contacto__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.va-contacto__item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.va-contacto__item strong {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+}
+
+.va-contacto__item span,
+.va-contacto__item a {
+  font-size: 0.92rem;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.5;
+}
+
+.va-contacto__item a {
+  font-weight: 600;
+}
+
+.va-contacto__item a:hover { color: #c9a84c; }
+
+.va-contacto__sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 28px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .va-contacto__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 20px;
+  }
+
+  .va-contacto__sep { display: none; }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .va-trat__grid    { grid-template-columns: repeat(2, 1fr); }
+  .va-testi__grid   { grid-template-columns: repeat(2, 1fr); }
+  .va-videos__grid  { grid-template-columns: repeat(2, 1fr); max-width: 680px; margin: 0 auto; }
+}
+
+@media (max-width: 900px) {
+  .va-hero__inner {
+    grid-template-columns: 1fr;
+    padding: 56px 28px;
+  }
+
+  .va-hero__right { display: none; }
+
+  .va-doctor__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .va-doctor__photo-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .va-doctor__content .va-title { text-align: center !important; }
+  .va-label { text-align: center; }
+  .va-doctor__rating { justify-content: center; }
+  .va-creds { max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  .va-hamamelis__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .va-hamamelis__img-wrap { order: -1; }
+  .va-hamamelis__img { max-height: 240px; }
+
+  .va-hamamelis__content .va-title { text-align: center !important; }
+  .va-hamamelis__content .va-label { text-align: center; }
+  .va-hamamelis__btns { justify-content: center; }
+
+  .va-proceso__steps { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .va-container { padding: 0 20px; }
+  .va-section   { padding: 56px 0; }
+
+  .va-sintomas__grid   { grid-template-columns: 1fr; max-width: 100%; }
+  .va-trat__grid       { grid-template-columns: 1fr; }
+  .va-videos__grid     { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+  .va-testi__grid      { grid-template-columns: 1fr; }
+
+  .va-hero__ctas { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .va-hero__trust { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .va-trust-sep { display: none; }
+
+  .va-cta-final__btns { flex-direction: column; gap: 14px; }
+
+  .va-hero__inner { padding: 48px 20px; }
+  .va-cta-final__inner { padding: 60px 20px; }
+}
+
+@media (max-width: 480px) {
+  .va-trat-card { padding: 28px 20px; }
+  .va-proceso__step { padding: 28px 20px; }
+}

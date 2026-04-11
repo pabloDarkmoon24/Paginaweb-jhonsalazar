@@ -1,53 +1,99 @@
 // Footer.jsx
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import logoFooter from '../../../assets/Home/Logo-footer.png';
+import logoFooter  from '../../../assets/Home/Logo-footer.png';
+import doctorPhoto from '../../../assets/Home/Foto-Dr-John-Salazar.png';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
 
-        {/* Logo */}
-        <img src={logoFooter} alt="Dr. John Salazar" className="footer-logo" />
+      {/* ── Franja principal ─────────────────────────────────────────────── */}
+      <div className="footer-main">
+        <div className="footer-container">
 
-        {/* Info del negocio */}
-        <div className="footer-info">
-          <p className="footer-info-text">
-            Medicina Biológica · Flebología · Productos Naturales
-          </p>
-          <p className="footer-info-text">
-            Pereira, Risaralda, Colombia
-          </p>
-          <a href="https://wa.me/573113958098" className="footer-whatsapp" target="_blank" rel="noopener noreferrer"
-            onClick={() => { if (typeof window.fbq === 'function') window.fbq('track', 'Contact'); }}>
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.557 4.126 1.526 5.859L.057 23.5l5.797-1.443A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.886 9.886 0 0 1-5.031-1.371l-.361-.214-3.741.981.999-3.648-.235-.374A9.86 9.86 0 0 1 2.106 12C2.106 6.58 6.58 2.106 12 2.106S21.894 6.58 21.894 12 17.42 21.894 12 21.894z"/>
-            </svg>
-            +57 311 3958098
-          </a>
+          {/* Columna 1 — Doctor */}
+          <div className="footer-col footer-col--brand">
+            <img
+                src="/Foto doc.jpg"
+                alt="Dr. John Salazar — Especialista en Flebología"
+                className="footer-doc-photo"
+                loading="lazy"
+              />
+            <div className="footer-brand-info">
+              <img src={logoFooter} alt="Dr. John Salazar" className="footer-logo" />
+              <p className="footer-tagline">
+                Medicina Biológica · Flebología · Productos Naturales
+              </p>
+              <p className="footer-location">Pereira, Risaralda, Colombia</p>
+            </div>
+          </div>
+
+          {/* Separador */}
+          <div className="footer-sep" />
+
+          {/* Columna 2 — Contacto */}
+          <div className="footer-col footer-col--contact">
+            <h4 className="footer-col__title">Contacto</h4>
+
+            <div className="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <span>MegaCentro Pinares, Cl. 18 #12-75</span>
+                <span>Torre 3, Cons. 705 · Pereira, Risaralda</span>
+              </div>
+            </div>
+
+            <div className="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 11.5 19.79 19.79 0 011.39 2.9 2 2 0 013.38 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.64a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <a
+                href="https://wa.me/573136497534"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-wa-link"
+                onClick={() => { if (typeof window.fbq === 'function') window.fbq('track', 'Contact'); }}
+              >
+                +57 313 649 7534
+              </a>
+            </div>
+
+            <div className="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>Lunes a Sábado · Previa cita</span>
+            </div>
+          </div>
+
+          {/* Separador */}
+          <div className="footer-sep" />
+
+          {/* Columna 3 — Navegación */}
+          <div className="footer-col footer-col--nav">
+            <h4 className="footer-col__title">Navegación</h4>
+            <nav className="footer-nav">
+              <Link to="/politica-privacidad"   className="footer-nav-link">Política de Privacidad</Link>
+              <Link to="/politica-devoluciones" className="footer-nav-link">Política de Devoluciones</Link>
+              <Link to="/contacto"              className="footer-nav-link">Contacto</Link>
+              <Link to="/tienda"                className="footer-nav-link">Tienda</Link>
+              <Link to="/varices"               className="footer-nav-link">Tratamiento de Várices</Link>
+            </nav>
+          </div>
+
         </div>
-
-        {/* Links */}
-        <div className="footer-links">
-          <Link to="/politica-devoluciones" className="footer-link">
-            Política de Devoluciones
-          </Link>
-          <Link to="/contacto" className="footer-link">
-            Contacto
-          </Link>
-          <Link to="/tienda" className="footer-link">
-            Tienda
-          </Link>
-        </div>
-
-        {/* Copyright */}
-        <p className="footer-copy">
-          © {new Date().getFullYear()} Dr. John Salazar — Todos los derechos reservados
-        </p>
-
       </div>
+
+      {/* ── Barra de copyright ───────────────────────────────────────────── */}
+      <div className="footer-copy-bar">
+        <p>© {new Date().getFullYear()} Dr. John Salazar — Todos los derechos reservados</p>
+      </div>
+
     </footer>
   );
 };

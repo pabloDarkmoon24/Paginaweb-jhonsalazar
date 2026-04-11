@@ -1,0 +1,237 @@
+/* VaricesSection.css */
+
+/* ── Sección ────────────────────────────────────────────────────────────────── */
+.vs {
+  background-color: #324149;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+/* ── Layout principal — 2 columnas ─────────────────────────────────────────── */
+.vs__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  align-items: center;
+  gap: 64px;
+  min-height: 500px;
+}
+
+/* ── CONTENIDO ──────────────────────────────────────────────────────────────── */
+.vs__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 64px 0;
+}
+
+.vs__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin: 0 0 18px;
+}
+
+.vs__title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.vs__title em {
+  font-style: italic;
+  color: #c9a84c;
+  font-weight: 400;
+}
+
+.vs__desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.7;
+  margin: 0 0 32px;
+  max-width: 520px;
+}
+
+.vs__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 40px;
+}
+
+.vs__list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+}
+
+.vs__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c9a84c;
+  flex-shrink: 0;
+}
+
+.vs__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #c9a84c;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.18s;
+  font-family: inherit;
+}
+
+.vs__cta:hover {
+  background: #b8963e;
+  transform: translateY(-2px);
+}
+
+/* ── FOTO ───────────────────────────────────────────────────────────────────── */
+.vs__photo-wrap {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+  align-self: center;
+}
+
+.vs__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.vs__badge {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(50,65,73,0.88);
+  border: 1px solid rgba(201,168,76,0.45);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c9a84c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────────────── */
+
+/* Tablet grande */
+@media screen and (max-width: 1100px) {
+  .vs__inner {
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+  }
+
+  .vs__photo-wrap {
+    width: 340px;
+    height: 420px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  .vs__inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    min-height: auto;
+  }
+
+  /* Foto arriba, contenido abajo */
+  .vs__photo-wrap {
+    order: -1;
+    width: 100%;
+    height: 320px;
+    border-radius: 0;
+    box-shadow: none;
+    align-self: auto;
+  }
+
+  .vs__photo {
+    object-position: center 20%;
+  }
+
+  .vs__content {
+    padding: 44px 2rem 52px;
+    align-items: flex-start;
+  }
+
+  .vs__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Móvil */
+@media screen and (max-width: 600px) {
+  .vs__photo-wrap {
+    height: 260px;
+  }
+
+  .vs__content {
+    padding: 36px 1.5rem 44px;
+  }
+
+  .vs__title {
+    font-size: 1.8rem;
+  }
+
+  .vs__desc {
+    font-size: 0.97rem;
+  }
+
+  .vs__list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .vs__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Móvil pequeño */
+@media screen and (max-width: 380px) {
+  .vs__photo-wrap {
+    height: 220px;
+  }
+
+  .vs__title {
+    font-size: 1.6rem;
+  }
+
+  .vs__content {
+    padding: 28px 1rem 36px;
+  }
+}

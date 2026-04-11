@@ -47,19 +47,32 @@ import Leads from './pages/admin/leads/Leads';
 import AdminProductos from './pages/admin/productos/AdminProductos';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import PoliticaDevoluciones from './pages/pagina/PoliticaDevoluciones';
+import PoliticaPrivacidad from './pages/pagina/PoliticaPrivacidad';
 import ScrollToTop from './components/common/ScrollToTop';
 import usePageTracking from './hooks/usePageTracking';
+import Varices from './pages/pagina/varices/Varices';
+import WhatsAppButton from './components/common/WhatsAppButton';
+
+// Determina el contexto del botón WhatsApp según la ruta actual
+const waContext = (pathname) => {
+  if (pathname.startsWith('/varices'))           return 'varices';
+  if (pathname.startsWith('/productos/prushot')) return 'prushot';
+  if (pathname.startsWith('/productos/hamamelis')) return 'hamamelis';
+  if (pathname.startsWith('/productos/ep11'))    return 'ep11';
+  return 'default';
+};
 
 // Componente interno para controlar Navbar/Footer según ruta
 const AppContent = () => {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith('/admin');
+  const isAdmin   = location.pathname.startsWith('/admin');
+  const isVarices = location.pathname === '/varices';
   usePageTracking();
 
   return (
     <>
       <ScrollToTop />
-      {!isAdmin && <GoogleMerchantBadge />}
+      {/* {!isAdmin && !isVarices && <GoogleMerchantBadge />} */}
       {!isAdmin && <Navbar />}
       <div className={isAdmin ? '' : 'App'}>
         <Routes>
@@ -73,6 +86,8 @@ const AppContent = () => {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/checkout/confirmacion" element={<ConfirmacionEpayco />} />
           <Route path="/politica-devoluciones" element={<PoliticaDevoluciones />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/varices" element={<Varices />} />
 
           {/* Admin login */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -95,6 +110,7 @@ const AppContent = () => {
         </Routes>
       </div>
       {!isAdmin && <Footer />}
+      {!isAdmin && <WhatsAppButton context={waContext(location.pathname)} />}
     </>
   );
 };

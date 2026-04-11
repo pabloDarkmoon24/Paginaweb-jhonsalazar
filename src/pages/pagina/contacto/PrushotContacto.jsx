@@ -21,6 +21,12 @@ const PrushotContacto = () => {
     setSending(true);
     try {
       await createLead(form);
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead', {
+          content_name: 'Formulario de contacto',
+          content_category: 'consulta',
+        });
+      }
       setSent(true);
       setForm({ asunto: '', nombres: '', apellidos: '', correo: '', telefono: '' });
     } catch (err) {

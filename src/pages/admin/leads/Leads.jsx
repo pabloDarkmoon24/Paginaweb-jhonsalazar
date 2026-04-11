@@ -1,6 +1,6 @@
 // Leads.jsx
 import { useState, useEffect } from 'react';
-import { LuEye, LuUsers, LuMail, LuCalendar, LuClock } from 'react-icons/lu';
+import { LuEye, LuUsers, LuMail, LuCalendar, LuClock, LuDownload } from 'react-icons/lu';
 import { getAllLeads, updateLeadStatus } from '../../../services/leadsService';
 import { getAllVisits } from '../../../services/visitsService';
 import { formatDate } from '../../../utils/formatters';
@@ -62,6 +62,32 @@ const Leads = () => {
     .map(([page, count]) => ({ page, count }))
     .sort((a, b) => b.count - a.count);
 
+  const exportCSV = () => {
+    const rows = [
+      ['Nombre', 'Email', 'Teléfono', 'Asunto', 'Tipo', 'Estado', 'Fuente', 'UTM Campaign', 'UTM Source', 'Fecha'],
+      ...leads.map(l => [
+        l.name || '',
+        l.email || '',
+        l.phone || '',
+        l.subject || l.message || '',
+        l.type === 'appointment' ? 'Cita' : 'Contacto',
+        l.status || '',
+        l.source || '',
+        l.utms?.utm_campaign || '',
+        l.utms?.utm_source || '',
+        l.createdAt?.toDate?.()?.toLocaleDateString('es-CO') || '',
+      ])
+    ];
+    const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `leads-dr-john-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const statValues = {
     visits:   visits.length,
     leads:    leads.length,
@@ -74,7 +100,12 @@ const Leads = () => {
 
   return (
     <div>
-      <h1 className="admin-page-title">Leads / Citas</h1>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+        <h1 className="admin-page-title" style={{ margin: 0 }}>Leads / Citas</h1>
+        <button onClick={exportCSV} style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: '#1a2636', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: 600 }}>
+          <LuDownload size={14} /> Exportar CSV (Meta)
+        </button>
+      </div>
 
       {/* Stats */}
       <div className="leads-stats">

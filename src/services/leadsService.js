@@ -7,6 +7,16 @@ import { db } from './firebase';
 
 const COLLECTION = 'leads';
 
+const getUtms = () => {
+  const params = new URLSearchParams(window.location.search);
+  const utms = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => {
+    const v = params.get(k);
+    if (v) utms[k] = v;
+  });
+  return utms;
+};
+
 // Guardar lead desde formulario de contacto
 export const createLead = async ({ nombres, apellidos, correo, telefono, asunto }) => {
   const data = {
@@ -16,6 +26,8 @@ export const createLead = async ({ nombres, apellidos, correo, telefono, asunto 
     phone: telefono,
     subject: asunto,
     status: 'pending',
+    source: 'form',
+    utms: getUtms(),
     createdAt: serverTimestamp(),
   };
   const docRef = await addDoc(collection(db, COLLECTION), data);

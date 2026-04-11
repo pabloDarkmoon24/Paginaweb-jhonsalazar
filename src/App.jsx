@@ -51,6 +51,7 @@ import PoliticaPrivacidad from './pages/pagina/PoliticaPrivacidad';
 import ScrollToTop from './components/common/ScrollToTop';
 import usePageTracking from './hooks/usePageTracking';
 import Varices from './pages/pagina/varices/Varices';
+import GraciasVarices from './pages/pagina/varices/GraciasVarices';
 import WhatsAppButton from './components/common/WhatsAppButton';
 
 // Determina el contexto del botón WhatsApp según la ruta actual
@@ -88,6 +89,7 @@ const AppContent = () => {
           <Route path="/politica-devoluciones" element={<PoliticaDevoluciones />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/varices" element={<Varices />} />
+          <Route path="/gracias-varices" element={<GraciasVarices />} />
 
           {/* Admin login */}
           <Route path="/admin/login" element={<AdminLogin />} />

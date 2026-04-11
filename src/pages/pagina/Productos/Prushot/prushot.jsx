@@ -21,6 +21,13 @@ const prushotSchema = {
       "category": "Suplementos naturales",
       "condition": "https://schema.org/NewCondition",
       "url": "https://drjohnsalazar.com.co/productos/prushot",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "5"
+      },
       "offers": {
         "@type": "Offer",
         "url": "https://drjohnsalazar.com.co/productos/prushot",

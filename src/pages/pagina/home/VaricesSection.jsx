@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './VaricesSection.css';
 
 const tratamientos = [
-  'Ecodoppler Vascular',
-  'Escleroterapia',
-  'Espuma Ecoguiada',
-  'Láser Endovascular',
+  'Tecnología de punta · Láser Vascular',
+  'Tratamientos multidisciplinarios',
+  'Sin cirugía · Sin hospitalización',
+  'Resultados visibles desde la primera sesión',
 ];
 
 const VaricesSection = () => (
@@ -15,13 +15,14 @@ const VaricesSection = () => (
 
       {/* ── Contenido izquierda ── */}
       <div className="vs__content">
-        <p className="vs__label">Especialidad clínica · Pereira, Eje Cafetero</p>
+        <p className="vs__label">Especialista en Medicina Biológica y Flebología · Pereira, Eje Cafetero</p>
         <h2 className="vs__title">
           ¿Sufres de <em>venas várices?</em>
         </h2>
         <p className="vs__desc">
-          El Dr. John Salazar trata las várices con técnicas modernas y mínimamente invasivas.
-          Sin cirugías abiertas, con diagnóstico Ecodoppler y resultados visibles desde la primera sesión.
+          El Dr. John Salazar, especialista en <strong>Medicina Biológica y Flebología</strong>,
+          trata las várices con tecnología de punta y un enfoque multidisciplinario.
+          Sin cirugía. Sin hospitalización. Resultados reales.
         </p>
         <ul className="vs__list">
           {tratamientos.map((t, i) => (
@@ -44,7 +45,7 @@ const VaricesSection = () => (
       <div className="vs__photo-wrap">
         <img
           src="/Foto doc.jpg"
-          alt="Dr. John Salazar — Especialista en Flebología, Pereira"
+          alt="Dr. John Salazar — Especialista en Medicina Biológica y Flebología, Pereira"
           className="vs__photo"
           loading="lazy"
         />

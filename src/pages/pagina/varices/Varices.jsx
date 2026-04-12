@@ -47,12 +47,12 @@ const varicosSchema = {
       '@type': 'FAQPage',
       mainEntity: [
         { '@type': 'Question', name: '¿Cuánto cuesta el tratamiento de várices en Pereira?', acceptedAnswer: { '@type': 'Answer', text: 'El costo varía según el tipo y extensión. Realizamos primero una evaluación con Ecodoppler para diseñar tu plan personalizado.' } },
-        { '@type': 'Question', name: '¿El tratamiento de várices duele?', acceptedAnswer: { '@type': 'Answer', text: 'Los procedimientos son mínimamente invasivos. Se usa anestesia local y la mayoría de pacientes retoman actividades el mismo día.' } },
+        { '@type': 'Question', name: '¿El tratamiento de várices duele?', acceptedAnswer: { '@type': 'Answer', text: 'Los tratamientos son mínimamente invasivos y no requieren cirugía. Se usa anestesia local cuando es necesario y la mayoría de pacientes retoman actividades el mismo día.' } },
         { '@type': 'Question', name: '¿Atienden pacientes de Manizales, Armenia y Cartago?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. El consultorio está en Pereira y atendemos pacientes de todo el Eje Cafetero. La mayoría solo necesita 2 a 3 visitas.' } },
         { '@type': 'Question', name: '¿Cuántas sesiones necesito?', acceptedAnswer: { '@type': 'Answer', text: 'Depende del caso. Várices leves: 1 a 3 sesiones de escleroterapia. Casos complejos se definen en la evaluación inicial.' } },
-        { '@type': 'Question', name: '¿Atienden pacientes de Manizales para tratamiento de várices?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Atendemos pacientes de Manizales en nuestro consultorio de Pereira. Son aproximadamente 55 minutos en carro y la mayoría necesita entre 2 y 3 visitas.' } },
-        { '@type': 'Question', name: '¿Dónde puedo tratar mis várices en Armenia?', acceptedAnswer: { '@type': 'Answer', text: 'El Dr. John Salazar atiende pacientes de Armenia, Calarcá, Montenegro y todo el Quindío en su consultorio de Pereira, fácilmente accesible por la autopista del Café.' } },
-        { '@type': 'Question', name: '¿Hay tratamiento de várices cerca de Cartago?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Cartago está a 40 minutos del consultorio del Dr. John Salazar en Pereira. También atendemos pacientes del norte del Valle del Cauca.' } },
+        { '@type': 'Question', name: '¿Atienden pacientes de Manizales para tratamiento de várices?', acceptedAnswer: { '@type': 'Answer', text: 'La consulta es únicamente en Pereira. Sin embargo, muchos pacientes de Manizales viajan al consultorio del Dr. John Salazar (aprox. 55 minutos) y generalmente solo necesitan 2 o 3 visitas.' } },
+        { '@type': 'Question', name: '¿Dónde puedo tratar mis várices en Armenia?', acceptedAnswer: { '@type': 'Answer', text: 'El Dr. John Salazar atiende exclusivamente en su consultorio de Pereira. Pacientes de Armenia, Calarcá, Montenegro y el Quindío viajan hasta Pereira, accesible fácilmente por la autopista del Café.' } },
+        { '@type': 'Question', name: '¿Hay tratamiento de várices cerca de Cartago?', acceptedAnswer: { '@type': 'Answer', text: 'La atención es solo en Pereira. Cartago está a unos 40 minutos del consultorio del Dr. John Salazar. Recibimos pacientes del norte del Valle del Cauca que viajan hasta Pereira.' } },
       ],
     },
   ],
@@ -98,10 +98,10 @@ function Varices() {
   ];
 
   const tratamientos = [
-    { num: '01', nombre: 'Ecodoppler Vascular', desc: 'Diagnóstico con ecografía Doppler. Mapeamos tu sistema venoso completo para definir con precisión el tratamiento que necesitas.' },
-    { num: '02', nombre: 'Escleroterapia',       desc: 'Cierra las venas afectadas mediante inyección. Ideal para várices pequeñas y arañas vasculares. Sin cirugía, sin recuperación larga.' },
-    { num: '03', nombre: 'Espuma Ecoguiada',     desc: 'Técnica avanzada para venas de mayor calibre. La espuma esclerosante se guía en tiempo real con ecografía para máxima precisión.' },
-    { num: '04', nombre: 'Láser Endovascular',   desc: 'Cierre definitivo con láser para venas safenas. Mínimamente invasivo. Formación avalada por Eccos Brazil. Retorno a actividades en 24–48 h.' },
+    { num: '01', nombre: 'Diagnóstico de Alta Precisión', desc: 'Evaluamos tu sistema venoso con tecnología de imagen avanzada para diseñar el plan de tratamiento exacto que necesitas.' },
+    { num: '02', nombre: 'Láser Vascular de Última Generación', desc: 'Tratamos las venas varicosas con láser vascular de punta. Sin cortes, sin cicatrices, retorno a actividades en 24–48 h.' },
+    { num: '03', nombre: 'Tratamiento Multidisciplinario', desc: 'Combinamos diferentes tecnologías y enfoques para abordar cada caso de forma integral. Un plan personalizado para cada paciente.' },
+    { num: '04', nombre: 'Sin Cirugía · Sin Hospitalización', desc: 'Todos nuestros tratamientos son ambulatorios. No requieren internación ni cirugía abierta. Máxima eficacia con mínima invasión.' },
   ];
 
   const credenciales = [
@@ -121,14 +121,14 @@ function Varices() {
 
   const faqs = [
     { p: '¿Cuánto cuesta el tratamiento de várices?',           r: 'El costo varía según el tipo y extensión. Realizamos primero una evaluación con Ecodoppler para diseñar tu plan. Escríbenos para recibir tu presupuesto sin compromiso.' },
-    { p: '¿El procedimiento duele?',                            r: 'Los tratamientos son mínimamente invasivos. Se usa anestesia local y la molestia es mínima. La mayoría retoman sus actividades el mismo día o al siguiente.' },
-    { p: '¿Atienden desde Manizales, Armenia y Cartago?',       r: 'Sí. El consultorio está en Pereira y atendemos regularmente pacientes de todo el Eje Cafetero. La mayoría solo necesita 2 a 3 visitas durante todo el tratamiento.' },
+    { p: '¿El tratamiento duele?',                             r: 'Los tratamientos son mínimamente invasivos y no requieren cirugía. La molestia es mínima y la mayoría de pacientes retoman sus actividades el mismo día o al siguiente.' },
+    { p: '¿Tienen consultorio en Manizales, Armenia o Cartago?', r: 'No. La consulta es únicamente en nuestro consultorio de Pereira, Risaralda. Sin embargo, recibimos pacientes que vienen desde Manizales, Armenia, Cartago y todo el Eje Cafetero.' },
     { p: '¿Las várices vuelven a aparecer?',                    r: 'Con un tratamiento bien ejecutado y hábitos saludables, la recurrencia es baja. Diseñamos planes de mantenimiento para cada paciente.' },
     { p: '¿Cuántas sesiones necesito?',                         r: 'Depende del caso. Las várices leves: 1 a 3 sesiones de escleroterapia. Los casos complejos se definen en la primera evaluación.' },
-    { p: '¿Atienden pacientes de Manizales?',                   r: 'Sí. Muchos pacientes de Manizales nos visitan regularmente en nuestro consultorio de Pereira. Son solo 55 minutos en carro y la mayoría necesita entre 2 y 3 visitas durante todo el tratamiento.' },
-    { p: '¿Atienden pacientes de Armenia y el Quindío?',        r: 'Por supuesto. Atendemos pacientes de Armenia, Calarcá, Montenegro, Quimbaya, La Tebaida y toda la región del Quindío. El acceso desde la autopista del Café hace que llegar a Pereira sea muy sencillo.' },
-    { p: '¿Puedo venir desde Cartago o el norte del Valle?',    r: 'Sí. Cartago está a 40 minutos de nuestro consultorio en Pereira. También atendemos pacientes de Ansermanuevo, Alcalá y municipios cercanos del norte del Valle del Cauca.' },
-    { p: '¿Tienen servicio en Dosquebradas o Santa Rosa?',      r: 'El consultorio está en Pereira (MegaCentro Pinares), a pocos minutos de Dosquebradas y Santa Rosa de Cabal. Muchos pacientes de esos municipios nos visitan con frecuencia.' },
+    { p: '¿Puedo venir desde Manizales?',                       r: 'Sí, pero la consulta es únicamente en nuestro consultorio de Pereira. Muchos pacientes de Manizales hacen el viaje (aproximadamente 55 minutos) y solo necesitan entre 2 y 3 visitas durante todo el tratamiento.' },
+    { p: '¿Puedo venir desde Armenia o el Quindío?',            r: 'Sí. La atención es solo en Pereira. Pacientes de Armenia, Calarcá, Montenegro y todo el Quindío nos visitan en el consultorio. El acceso desde la autopista del Café hace que llegar a Pereira sea muy sencillo.' },
+    { p: '¿Puedo venir desde Cartago o el norte del Valle?',    r: 'Sí, pero la consulta es exclusivamente en Pereira. Cartago está a unos 40 minutos del consultorio. También atendemos pacientes de municipios del norte del Valle del Cauca que viajan hasta Pereira.' },
+    { p: '¿Tienen consultorio en Dosquebradas o Santa Rosa?',   r: 'No. El único consultorio está en Pereira. Sin embargo, Dosquebradas y Santa Rosa de Cabal quedan a pocos minutos, por lo que muchos pacientes de esos municipios nos visitan con frecuencia.' },
   ];
 
   const videos = [
@@ -166,8 +166,9 @@ function Varices() {
                 <span className="va-hero__title-place">en el Eje Cafetero</span>
               </h1>
               <p className="va-hero__desc">
-                Diagnóstico con Ecodoppler · Escleroterapia · Espuma Ecoguiada · Láser Endovascular.
-                Técnicas modernas, <strong>sin cirugía abierta</strong>, con resultados visibles desde la primera sesión.
+                Especialista en <strong>Medicina Biológica y Flebología</strong>. Trabajamos con
+                tecnología de punta — incluyendo <strong>Láser Vascular</strong> — y un enfoque
+                multidisciplinario. <strong>Sin cirugía. Sin hospitalización.</strong> Resultados visibles desde la primera sesión.
               </p>
               <div className="va-hero__ctas">
                 <CtaWa text="Agendar consulta" size="lg" />
@@ -251,8 +252,8 @@ function Varices() {
         {/* ── TRATAMIENTOS ─────────────────────────────────────────────────── */}
         <section className="va-section va-tratamientos">
           <div className="va-container">
-            <h2 className="va-title va-title--light">Técnicas que usamos</h2>
-            <p className="va-sub va-sub--light">Cada caso es diferente. El Ecodoppler define el tratamiento exacto que necesitas.</p>
+            <h2 className="va-title va-title--light">Tecnología de punta para tratar tus várices</h2>
+            <p className="va-sub va-sub--light">Trabajamos con la última tecnología disponible y un enfoque multidisciplinario. Sin cirugía.</p>
             <div className="va-trat__grid">
               {tratamientos.map((t, i) => (
                 <div key={i} className="va-trat-card">
@@ -271,7 +272,7 @@ function Varices() {
             <div className="va-doctor__photo-wrap">
               <img
                 src="/Foto doc.jpg"
-                alt="Dr. John Salazar — Especialista en Flebología"
+                alt="Dr. John Salazar — Especialista en Medicina Biológica y Flebología"
                 className="va-doctor__photo"
                 loading="lazy"
               />
@@ -282,10 +283,10 @@ function Varices() {
                 <em>Dr. John Salazar</em>
               </h2>
               <p className="va-doctor__bio">
-                Médico Cirujano con más de 10 años de experiencia clínica. Se especializó en Flebología
-                y técnicas vasculares avanzadas en México, Brasil y Venezuela.
-                Con formación en <strong>Láser Endovascular y Espuma Ecoguiada</strong> a nivel internacional,
-                es referente en el tratamiento de várices en el Eje Cafetero.
+                Médico especialista en <strong>Medicina Biológica y Flebología</strong> con más de 10 años de experiencia clínica.
+                Formado en tecnologías vasculares de punta en México, Brasil y Venezuela.
+                Referente en el tratamiento multidisciplinario de venas várices en el Eje Cafetero,
+                utilizando <strong>láser vascular y tecnología de última generación</strong>, siempre sin cirugía.
               </p>
               <div className="va-creds">
                 {credenciales.map((c, i) => (
@@ -313,8 +314,8 @@ function Varices() {
             <div className="va-proceso__steps">
               {[
                 { n: '1', titulo: 'Agenda tu consulta',          desc: 'Escríbenos por WhatsApp o llama. Te confirmamos cita en 24 horas.' },
-                { n: '2', titulo: 'Evaluación con Ecodoppler',   desc: 'El doctor mapea tu sistema venoso con ecografía y diseña tu plan personalizado.' },
-                { n: '3', titulo: 'Tratamiento y seguimiento',   desc: 'Realizamos el procedimiento y te acompañamos hasta lograr los resultados.' },
+                { n: '2', titulo: 'Evaluación con tecnología avanzada',   desc: 'El Dr. John Salazar, especialista en Medicina Biológica y Flebología, diseña tu plan de tratamiento personalizado.' },
+                { n: '3', titulo: 'Tratamiento y seguimiento',   desc: 'Aplicamos la tecnología más avanzada y te acompañamos durante todo el proceso hasta lograr los resultados.' },
               ].map((s, i) => (
                 <div key={i} className="va-proceso__step">
                   <div className="va-proceso__num">{s.n}</div>

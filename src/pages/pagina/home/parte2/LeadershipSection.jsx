@@ -31,9 +31,9 @@ const LeadershipSection = () => {
 
         {/* Descripción */}
         <p className="leadership-description">
-          Bajo la dirección del <strong>Dr. John Salazar</strong>, especialista en Flebología y 
-          Úlceras Varicosas, <strong>hemos desarrollado soluciones únicas</strong> que 
-          combinan la sabiduría de la naturaleza con el rigor de la ciencia.
+          Bajo la dirección del <strong>Dr. John Salazar</strong>, especialista en <strong>Medicina Biológica y Flebología</strong>,
+          trabajamos con tecnología de punta y tratamientos multidisciplinarios para el manejo de
+          venas várices <strong>sin cirugía</strong>, combinando la ciencia con el bienestar integral.
         </p>
 
         {/* Grid de 3 imágenes */}
